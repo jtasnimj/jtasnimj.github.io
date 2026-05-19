@@ -179,10 +179,9 @@ html, body { margin: 0; padding: 0; background: var(--bg); }
 .pos-bullets li { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; display: flex; gap: 10px; }
 
 .award-list { display: grid; gap: 10px; }
-.award-row { display: grid; grid-template-columns: 1fr 140px 110px; gap: 16px; font-size: 13.5px; color: var(--ink-soft); align-items: baseline; }
+.award-row { display: grid; grid-template-columns: 1fr 110px; gap: 16px; font-size: 13.5px; color: var(--ink-soft); align-items: baseline; }
 .award-name { color: var(--ink); font-weight: 500; }
 .award-where { color: var(--ink-mute); }
-.award-amount { color: var(--accent); font-weight: 500; }
 .award-year { color: var(--ink-mute); text-align: right; }
 
 .patent-list { display: grid; gap: 18px; }
