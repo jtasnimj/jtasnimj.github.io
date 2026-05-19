@@ -1,0 +1,413 @@
+<!doctype html>
+<!-- Nav + footer are duplicated across all 6 pages by design (no build step).
+     Edit all 6 when changing shared chrome. Canonical copy: index.html. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sakib Mostafa · CV · Stanford</title>
+  <meta name="description" content="Full curriculum vitae of Sakib Mostafa — education, experience, awards, patents, talks, technical skills, service, and references.">
+  <link rel="canonical" href="https://sakibmostafa.com/cv.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sakib Mostafa · CV">
+  <meta property="og:description" content="Full curriculum vitae — education, experience, awards, patents, talks, skills, service, and references.">
+  <meta property="og:url" content="https://sakibmostafa.com/cv.html">
+  <!-- TODO(placeholder): og-image — supply og.png (1200x630) -->
+  <meta property="og:image" content="https://sakibmostafa.com/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <!-- PLACEHOLDER: rasterize from favicon.svg before deploy -->
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="a-root page">
+
+  <nav class="nav">
+    <div class="nav-brand">
+      <span class="a-logo-mark">
+        <svg viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">
+          <circle cx="50" cy="50" r="42" fill="none" stroke="#15151a" stroke-width="2"/>
+          <line x1="38" y1="56" x2="60" y2="62" stroke="#15151a" stroke-width="1.4"/>
+          <line x1="38" y1="56" x2="56" y2="34" stroke="#15151a" stroke-width="1.4"/>
+          <line x1="60" y1="62" x2="56" y2="34" stroke="#4e8a8c" stroke-width="1.4"/>
+          <circle cx="38" cy="56" r="5.2" fill="#15151a"/>
+          <circle cx="60" cy="62" r="3.8" fill="#15151a"/>
+          <circle cx="56" cy="34" r="4.4" fill="#b9883c"/>
+        </svg>
+      </span>
+      <span class="nav-brand-name">Sakib Mostafa</span>
+      <span class="nav-brand-sub">· Postdoctoral Scholar · Stanford</span>
+    </div>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="index.html">Home</a></li>
+      <li><a class="nav-link" href="research.html">Research</a></li>
+      <li><a class="nav-link" href="publications.html">Publications</a></li>
+      <li><a class="nav-link" href="teaching.html">Teaching</a></li>
+      <li><a class="nav-link is-active" href="cv.html">CV</a></li>
+      <li><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-body">
+    <section class="section">
+      <div class="cv-head">
+        <div>
+          <div class="a-section-label">Curriculum Vitae</div>
+          <h1 class="h1-page">Full record</h1>
+        </div>
+        <!-- TODO(placeholder): cv-pdf — drop cv.pdf at repo root -->
+        <a class="a-tag cta cta--fill" href="cv.pdf" data-placeholder="cv-pdf">Download PDF →</a>
+      </div>
+
+      <div class="cv-grid">
+
+        <!-- Education -->
+        <div class="a-section-label cv-label">Education</div>
+        <div class="cv-list">
+          <div class="edu-row">
+            <div>
+              <h3 class="edu-degree">PhD, Computer Science</h3>
+              <div class="edu-school">University of Saskatchewan</div>
+              <div class="edu-advisor">Advisor: Debajyoti Mondal</div>
+              <div class="edu-thesis">Improving Deep Learning Classifiers for Plant Phenotyping using XAI Techniques</div>
+            </div>
+            <div class="edu-year">May 2024</div>
+          </div>
+          <div class="edu-row">
+            <div>
+              <h3 class="edu-degree">MSc, Biomedical Engineering</h3>
+              <div class="edu-school">University of Saskatchewan</div>
+              <div class="edu-advisor">Advisor: Fang-Xiang Wu</div>
+              <div class="edu-thesis">Machine Learning for the Diagnosis of Autism Spectrum Disorder</div>
+            </div>
+            <div class="edu-year">August 2019</div>
+          </div>
+          <div class="edu-row">
+            <div>
+              <h3 class="edu-degree">BSc, Electronics &amp; Communication Engineering</h3>
+              <div class="edu-school">Khulna University of Engineering and Technology, Bangladesh</div>
+              <div class="edu-advisor">Advisor: A. B. M. Aowlad Hossain</div>
+              <div class="edu-thesis">Simulation Study on Nonlinear Ultrasound Imaging</div>
+            </div>
+            <div class="edu-year">May 2016</div>
+          </div>
+        </div>
+
+        <div class="cv-rule"></div>
+
+        <!-- Experience -->
+        <div class="a-section-label cv-label">Experience</div>
+        <div class="cv-list">
+          <div class="pos">
+            <div class="pos-head">
+              <div>
+                <h3 class="pos-role">Postdoctoral Scholar</h3>
+                <div class="pos-where">Stanford School of Medicine — Department of Radiation Oncology</div>
+                <div class="pos-advisor">Supervisor: Md. Tauhidul Islam</div>
+              </div>
+              <div class="pos-dates">April 2025 — Present</div>
+            </div>
+            <ul class="pos-bullets">
+              <li><span class="bullet">·</span>Developed Dynomap — an interpretable spatial-representation framework converting high-dimensional cfRNA and biomedical tabular profiles into image-like representations.</li>
+              <li><span class="bullet">·</span>Led liquid biopsy analyses across cfRNA cohorts including RARE-Seq, with focus on early detection, reduced panels, and biologically interpretable attribution.</li>
+              <li><span class="bullet">·</span>Designed multimodal architectures integrating molecular profiles with medical imaging to identify genetic programs linked to imaging phenotypes.</li>
+              <li><span class="bullet">·</span>Built graph-to-image and graph foundation model frameworks for heterogeneous, multi-omics, and cancer biology data.</li>
+            </ul>
+          </div>
+          <div class="pos">
+            <div class="pos-head">
+              <div>
+                <h3 class="pos-role">Postdoctoral Associate</h3>
+                <div class="pos-where">National Research Council Canada &amp; University of Calgary</div>
+                <div class="pos-advisor">Supervisor: Sateesh Kagale (NRC) · Marcus Samuel (Calgary)</div>
+              </div>
+              <div class="pos-dates">January 2024 — February 2025</div>
+            </div>
+            <ul class="pos-bullets">
+              <li><span class="bullet">·</span>Contributed to a consortium-led pangenome project on de novo assembly of 65+ pea genomes.</li>
+              <li><span class="bullet">·</span>Led genomic analysis of 4,800 skim-sequenced lines: assembly, SNP calling, genotype imputation.</li>
+              <li><span class="bullet">·</span>Benchmarked DeepVariant against conventional SNP callers for the pea genome.</li>
+              <li><span class="bullet">·</span>Built deep-learning imputation models tailored to plant genomics.</li>
+            </ul>
+          </div>
+          <div class="pos">
+            <div class="pos-head">
+              <div>
+                <h3 class="pos-role">Software Developer</h3>
+                <div class="pos-where">Global Institute for Food Security</div>
+                <div class="pos-advisor">Supervisor: Steven Xu</div>
+              </div>
+              <div class="pos-dates">January 2023 — September 2023</div>
+            </div>
+            <ul class="pos-bullets">
+              <li><span class="bullet">·</span>Maintained and optimized a cross-team genomic database, reducing downtime by 98%.</li>
+            </ul>
+          </div>
+          <div class="pos">
+            <div class="pos-head">
+              <div>
+                <h3 class="pos-role">Software Developer</h3>
+                <div class="pos-where">Nutrien Ag Solutions</div>
+                <div class="pos-advisor">Supervisor: Zoe Ehlert</div>
+              </div>
+              <div class="pos-dates">January 2022 — December 2022</div>
+            </div>
+            <ul class="pos-bullets">
+              <li><span class="bullet">·</span>Engineered genomic data management solutions, dropping marker-assisted breeding error rates to 1%.</li>
+            </ul>
+          </div>
+          <div class="pos">
+            <div class="pos-head">
+              <div>
+                <h3 class="pos-role">Mitacs Research Intern</h3>
+                <div class="pos-where">Nutrien Ag Solutions</div>
+                <div class="pos-advisor">Supervisor: Ian Stavness · Zoe Ehlert</div>
+              </div>
+              <div class="pos-dates">August 2021 — December 2021</div>
+            </div>
+            <ul class="pos-bullets">
+              <li><span class="bullet">·</span>Designed a Django web platform for storing and analyzing genomic data across interdisciplinary teams.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-rule"></div>
+
+        <!-- Awards -->
+        <div class="a-section-label cv-label">Awards &amp; funding</div>
+        <div class="award-list">
+          <div class="award-row">
+            <div><span class="award-name">Google Cloud Platform Research Grant</span><span class="award-where"> · Stanford School of Medicine</span></div>
+            <div class="award-amount">USD 20,000</div>
+            <div class="award-year">May 2026 — April 2027</div>
+          </div>
+          <div class="award-row">
+            <div><span class="award-name">Stanford Cancer Institute Innovation Award</span><span class="award-where"> · Stanford School of Medicine</span></div>
+            <div class="award-amount">USD 75,000</div>
+            <div class="award-year">December 2025</div>
+          </div>
+          <div class="award-row">
+            <div><span class="award-name">University of Saskatchewan Departmental Scholarship</span><span class="award-where"> · Computer Science</span></div>
+            <div class="award-amount">CAD 46,000</div>
+            <div class="award-year">2020 — 2024</div>
+          </div>
+          <div class="award-row">
+            <div><span class="award-name">Plant Phenotyping &amp; Imaging Research Center Grant</span><span class="award-where"> · Global Institute for Food Security</span></div>
+            <div class="award-amount">CAD 46,000</div>
+            <div class="award-year">2020 — 2024</div>
+          </div>
+          <div class="award-row">
+            <div><span class="award-name">Mitacs Business Strategy Internship</span><span class="award-where"> · Mitacs Accelerate</span></div>
+            <div class="award-amount">CAD 30,000</div>
+            <div class="award-year">2021 &amp; 2022</div>
+          </div>
+          <div class="award-row">
+            <div><span class="award-name">Devolved Scholarship</span><span class="award-where"> · Biomedical Engineering, USask</span></div>
+            <div class="award-amount">CAD 34,000</div>
+            <div class="award-year">2017 — 2019</div>
+          </div>
+          <div class="award-row">
+            <div><span class="award-name">Faculty Scholarship</span><span class="award-where"> · KUET, Bangladesh</span></div>
+            <div class="award-amount">CAD 10,000</div>
+            <div class="award-year">2012 — 2016</div>
+          </div>
+          <div class="award-row">
+            <div><span class="award-name">Best Poster Award, Agriculture Research Day</span><span class="award-where"> · USask</span></div>
+            <div class="award-amount">CAD 1,500</div>
+            <div class="award-year">September 2023</div>
+          </div>
+          <div class="award-row">
+            <div><span class="award-name">Best Poster Award, First Runner-Up</span><span class="award-where"> · 7th Symposium on Innovations in CS</span></div>
+            <div class="award-amount">CAD 1,000</div>
+            <div class="award-year">September 2023</div>
+          </div>
+          <div class="award-row">
+            <div><span class="award-name">Best Poster Award</span><span class="award-where"> · P2IRC Symposium</span></div>
+            <div class="award-amount">CAD 700</div>
+            <div class="award-year">October 2021</div>
+          </div>
+          <div class="award-row">
+            <div><span class="award-name">GIFS Gracias Award</span><span class="award-where"> · For outstanding Genguard development</span></div>
+            <div class="award-amount">—</div>
+            <div class="award-year">October 2023</div>
+          </div>
+        </div>
+
+        <div class="cv-rule"></div>
+
+        <!-- Patents -->
+        <div class="a-section-label cv-label">Patents</div>
+        <div class="patent-list">
+          <div>
+            <h3 class="patent-title">A Graph Foundation Model for Cross-Domain Node Representation Learning on Heterogeneous Graphs.</h3>
+            <div class="patent-meta">Islam MT, Xing L, Mostafa S · Stanford OTL 26-222 · Filed May 2026</div>
+          </div>
+          <div>
+            <h3 class="patent-title">An End-to-End Deep Learning System for Transforming Tabular Data into Images for High-Performance Classification.</h3>
+            <div class="patent-meta">Islam MT, Xing L, Mostafa S · Stanford OTL 25-519 · Filed November 2025</div>
+          </div>
+        </div>
+
+        <div class="cv-rule"></div>
+
+        <!-- Talks -->
+        <div class="a-section-label cv-label">Selected talks</div>
+        <div class="talk-list">
+          <div class="talk-row">
+            <span class="a-tag a-tag--sm talk-kind">Invited</span>
+            <div>
+              <div class="talk-title">A Language-Encoded Structural Topology Enables Generalizable Foundation Models for Graph-Structured Data.</div>
+              <div class="talk-venue">Stanford Cancer Institute Radiation and Cancer Biology Seminar Series</div>
+            </div>
+            <div class="talk-date">May 2026</div>
+          </div>
+          <div class="talk-row">
+            <span class="a-tag a-tag--sm talk-kind">Oral</span>
+            <div>
+              <div class="talk-title">Interpretable Integration of Molecular Omics and Medical Imaging for Disease Analysis.</div>
+              <div class="talk-venue">AAPM Annual Meeting 2026, Vancouver, BC</div>
+            </div>
+            <div class="talk-date">July 2026</div>
+          </div>
+          <div class="talk-row">
+            <span class="a-tag a-tag--sm talk-kind">Seminar</span>
+            <div>
+              <div class="talk-title">XAI Solutions for Deep Learning Models in Plant Phenotyping.</div>
+              <div class="talk-venue">Department of Computer Science, University of Saskatchewan</div>
+            </div>
+            <div class="talk-date">April 2024</div>
+          </div>
+          <div class="talk-row">
+            <span class="a-tag a-tag--sm talk-kind">Seminar</span>
+            <div>
+              <div class="talk-title">Deep Learning Solutions to Improve Plant Yield Using Multi-Omics Data.</div>
+              <div class="talk-venue">NRC, Aquatic and Crop Resource Development</div>
+            </div>
+            <div class="talk-date">July 2023</div>
+          </div>
+          <div class="talk-row">
+            <span class="a-tag a-tag--sm talk-kind">Seminar</span>
+            <div>
+              <div class="talk-title">Ways of Incorporating Deep Learning in Detecting Autism Spectrum Disorder.</div>
+              <div class="talk-venue">Division of Biomedical Engineering, USask</div>
+            </div>
+            <div class="talk-date">May 2019</div>
+          </div>
+        </div>
+
+        <div class="cv-rule"></div>
+
+        <!-- Skills -->
+        <div class="a-section-label cv-label">Technical skills</div>
+        <div class="skill-list">
+          <div class="skill-row"><div class="skill-key">Research areas</div><div class="skill-val">Interpretable AI · Cancer liquid biopsy · cfRNA / ctDNA modeling · Multimodal cancer AI · Diagnostic imaging integration · Digital pathology · Multi-omics integration · Graph foundation models · Spatial representation learning · Cancer genomics</div></div>
+          <div class="skill-row"><div class="skill-key">Programming</div><div class="skill-val">Python · C++ · MATLAB · JavaScript · MySQL · SQL</div></div>
+          <div class="skill-row"><div class="skill-key">Deep learning</div><div class="skill-val">PyTorch · TensorFlow · Keras · Scikit-learn</div></div>
+          <div class="skill-row"><div class="skill-key">Scientific computing</div><div class="skill-val">NumPy · Pandas · NetworkX · iGraph · PIL · OpenCV</div></div>
+          <div class="skill-row"><div class="skill-key">High-performance computing</div><div class="skill-val">Slurm clusters · Multi-GPU distributed training · Snakemake workflows</div></div>
+          <div class="skill-row"><div class="skill-key">Web &amp; database</div><div class="skill-val">Django · React · jQuery · Ajax</div></div>
+          <div class="skill-row"><div class="skill-key">Tools &amp; platforms</div><div class="skill-val">AWS · Google Cloud Platform · Jupyter · Git · Linux</div></div>
+        </div>
+
+        <div class="cv-rule"></div>
+
+        <!-- Service -->
+        <div class="a-section-label cv-label">Service &amp; leadership</div>
+        <div class="service-list">
+          <div><span class="service-lead">Journal reviews. </span>ACM Transactions on Computing for Healthcare (1) · IEEE TETCI (1) · IEEE Access (8) · Frontiers in Neuroscience: Brain Imaging Methods (2) · Frontiers in Plant Science (2) · Elsevier Neurocomputing (2) · BMC Plant Methods (1)</div>
+          <div><span class="service-lead">Conference reviews. </span>32nd Canadian Conference on Computational Geometry (1) · IEEE BIBM (2) · ICCABS (1)</div>
+          <div>
+            <div class="service-sub">Organization &amp; leadership.</div>
+            <ul class="service-sublist">
+              <li><span class="bullet">·</span>Research Fest Organizer, CS Graduate Council, USask, 2021</li>
+              <li><span class="bullet">·</span>Global Village Organizer, USask Student Union, 2021</li>
+              <li><span class="bullet">·</span>Local Organizer, 32nd Canadian Conf. on Computational Geometry, 2020</li>
+              <li><span class="bullet">·</span>Local Organizer, IEEE EICT, KUET, 2015</li>
+              <li><span class="bullet">·</span>Vice President (Social), CS Graduate Council, USask, 2020 — 2021</li>
+              <li><span class="bullet">·</span>President, Bangladesh Students Association, USask, 2020 — 2021</li>
+              <li><span class="bullet">·</span>Vice President, Bangladesh Students Association, USask, 2018 — 2019</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-rule"></div>
+
+        <!-- Media -->
+        <div class="a-section-label cv-label">Media coverage</div>
+        <div class="media-list">
+          <div class="media-row">
+            <div class="media-headline">Diving into deep learning: USask research</div>
+            <div class="media-outlet">USask News</div>
+            <div class="media-year">2022</div>
+          </div>
+          <div class="media-row">
+            <div class="media-headline">Unpacking the black box of AI: Would you trust AI with your cancer diagnosis?</div>
+            <div class="media-outlet">USask College of Arts &amp; Science News</div>
+            <div class="media-year">2025</div>
+          </div>
+          <div class="media-row">
+            <div class="media-headline">This U of S grad wants to ensure you can trust AI with your cancer diagnosis</div>
+            <div class="media-outlet">The Morning Edition Saskatchewan, CBC Radio</div>
+            <div class="media-year">October 2025</div>
+          </div>
+          <div class="media-row">
+            <div class="media-headline">U of S grad ensures trust in AI with cancer diagnosis</div>
+            <div class="media-outlet">The Saskatoon Morning, CBC Radio One</div>
+            <div class="media-year">October 2025</div>
+          </div>
+        </div>
+
+        <div class="cv-rule"></div>
+
+        <!-- References -->
+        <div class="a-section-label cv-label">References</div>
+        <div class="ref-grid">
+          <div class="a-card ref-card">
+            <h4 class="ref-name">Md. Tauhidul Islam</h4>
+            <div class="ref-role">Postdoctoral Supervisor · Assistant Professor</div>
+            <div class="ref-where">Radiation Oncology, Stanford School of Medicine</div>
+            <div class="ref-email">tauhid@stanford.edu</div>
+          </div>
+          <div class="a-card ref-card">
+            <h4 class="ref-name">Lei Xing</h4>
+            <div class="ref-role">Senior Research Collaborator · Jacob Haimson &amp; Sarah S. Donaldson Professor</div>
+            <div class="ref-where">Medical Physics, Stanford School of Medicine</div>
+            <div class="ref-email">lei@stanford.edu</div>
+          </div>
+          <div class="a-card ref-card">
+            <h4 class="ref-name">Debajyoti Mondal</h4>
+            <div class="ref-role">PhD Supervisor · Associate Professor</div>
+            <div class="ref-where">Computer Science, University of Saskatchewan</div>
+            <div class="ref-email">d.mondal@usask.ca</div>
+          </div>
+          <div class="a-card ref-card">
+            <h4 class="ref-name">Ian Stavness</h4>
+            <div class="ref-role">PhD Committee Member &amp; Mitacs Supervisor · Professor</div>
+            <div class="ref-where">Computer Science, University of Saskatchewan</div>
+            <div class="ref-email">stavness@usask.ca</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Sakib Mostafa · Stanford School of Medicine</span>
+    <div class="footer-links">
+      <a href="mailto:sakib.mostafa@stanford.edu" class="a-link-underline">sakib.mostafa@stanford.edu</a>
+      <!-- TODO(placeholder): scholar -->
+      <a href="#" data-placeholder="scholar" class="a-link-underline">Google Scholar</a>
+      <!-- TODO(placeholder): linkedin -->
+      <a href="#" data-placeholder="linkedin" class="a-link-underline">LinkedIn</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

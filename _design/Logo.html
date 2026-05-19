@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sakib Mostafa — Logo Identity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:       #142a44;
+    --navy-deep:  #0b1827;
+    --navy-soft:  #25405e;
+    --teal:       #4e8a8c;
+    --teal-deep:  #356f72;
+    --ivory:      #f5efe3;
+    --ivory-soft: #fbf7ed;
+    --ivory-warm: #ece4d3;
+    --gold:       #b9883c;
+    --gold-soft:  #d6b376;
+    --rose:       #b56b6b;
+    --rule:       #c9bea6;
+    --ink:        var(--navy);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-feature-settings: "lnum", "kern";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .mono { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .label {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: color-mix(in oklab, var(--ink) 55%, transparent);
+    font-weight: 500;
+  }
+  .num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: color-mix(in oklab, var(--ink) 50%, transparent);
+  }
+  h1, h2, h3, h4 { margin: 0; font-weight: 500; letter-spacing: -0.01em; }
+
+  .page { max-width: 1280px; margin: 0 auto; padding: 0 64px; }
+
+  /* ---------- Masthead ---------- */
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 22px 64px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+  }
+  .masthead .center { text-align: center; }
+  .masthead .right { text-align: right; }
+  .masthead h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--navy);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 120px 0 110px;
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+  }
+  .hero .eyebrow { margin-bottom: 28px; }
+  .hero .lockup { display: inline-flex; align-items: center; gap: 28px; }
+  .hero .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 76px;
+    letter-spacing: -0.005em;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .hero .name .em { font-style: italic; font-weight: 400; color: var(--teal-deep); }
+  .hero .name .dot { color: var(--gold); }
+  .hero .tagline {
+    margin-top: 36px;
+    font-size: 22px;
+    font-style: italic;
+    color: color-mix(in oklab, var(--ink) 65%, transparent);
+    font-weight: 400;
+    letter-spacing: 0.005em;
+  }
+  .hero .meta { margin-top: 22px; display: inline-flex; gap: 14px; align-items: center; }
+  .hero .meta span { display: inline-block; }
+  .hero .meta .sep { width: 4px; height: 4px; border-radius: 999px; background: var(--gold); }
+
+  /* ---------- Section frame ---------- */
+  section { padding: 84px 0; border-bottom: 1px solid var(--rule); }
+  .sec-head {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 24px;
+    align-items: baseline;
+    margin-bottom: 44px;
+  }
+  .sec-head .idx { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--gold); letter-spacing: 0.1em; }
+  .sec-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .sec-head h2 em { font-style: italic; color: var(--teal-deep); }
+  .sec-head .meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: color-mix(in oklab, var(--ink) 55%, transparent); letter-spacing: 0.12em; text-transform: uppercase; }
+
+  /* ---------- Construction ---------- */
+  .construction {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .construction .plate {
+    border: 1px solid var(--rule);
+    background: var(--ivory-soft);
+    padding: 56px;
+    position: relative;
+    aspect-ratio: 1 / 1;
+  }
+  .construction .plate::before,
+  .construction .plate::after {
+    content: ""; position: absolute; background: var(--gold); opacity: 0.6;
+  }
+  .construction .plate::before { left: 18px; top: 18px; width: 14px; height: 1px; }
+  .construction .plate::after { left: 18px; top: 18px; width: 1px; height: 14px; }
+  .construction .corners span {
+    position: absolute; background: var(--gold); opacity: 0.6;
+  }
+  .construction .corners .c-tr-h { right: 18px; top: 18px; width: 14px; height: 1px; }
+  .construction .corners .c-tr-v { right: 18px; top: 18px; width: 1px; height: 14px; }
+  .construction .corners .c-bl-h { left: 18px; bottom: 18px; width: 14px; height: 1px; }
+  .construction .corners .c-bl-v { left: 18px; bottom: 18px; width: 1px; height: 14px; }
+  .construction .corners .c-br-h { right: 18px; bottom: 18px; width: 14px; height: 1px; }
+  .construction .corners .c-br-v { right: 18px; bottom: 18px; width: 1px; height: 14px; }
+  .construction .plate-label {
+    position: absolute; left: 0; right: 0; bottom: 14px; text-align: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    color: color-mix(in oklab, var(--ink) 50%, transparent); letter-spacing: 0.16em;
+  }
+  .construction .copy h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 400; line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+  }
+  .construction .copy h3 em { font-style: italic; color: var(--teal-deep); }
+  .construction .copy p {
+    margin: 18px 0 0;
+    font-size: 17px; line-height: 1.55;
+    color: color-mix(in oklab, var(--ink) 78%, transparent);
+    max-width: 460px;
+  }
+  .construction .legend {
+    margin-top: 26px;
+    display: grid; gap: 10px; max-width: 460px;
+  }
+  .construction .legend .row {
+    display: grid; grid-template-columns: 22px 130px 1fr; align-items: center;
+    font-size: 13px; color: color-mix(in oklab, var(--ink) 78%, transparent);
+  }
+  .construction .legend .row .dot {
+    width: 10px; height: 10px; border-radius: 999px;
+  }
+  .construction .legend .row .name {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 14px; color: var(--ink);
+  }
+
+  /* ---------- Lockups grid ---------- */
+  .lockups { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); }
+  .lockup-cell {
+    padding: 64px;
+    min-height: 280px;
+    display: flex; align-items: center; justify-content: center;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    background: var(--ivory-soft);
+  }
+  .lockup-cell:nth-child(2n) { border-right: none; }
+  .lockup-cell:nth-last-child(-n+2) { border-bottom: none; }
+  .lockup-cell .tag {
+    position: absolute; left: 18px; top: 16px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: color-mix(in oklab, var(--ink) 50%, transparent);
+  }
+  .lockup-cell .ref {
+    position: absolute; right: 18px; top: 16px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    color: var(--gold); letter-spacing: 0.1em;
+  }
+
+  /* ---------- Horizontal lockup ---------- */
+  .h-lockup { display: inline-flex; align-items: center; gap: 22px; }
+  .h-lockup .word {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: 38px;
+    letter-spacing: -0.01em; color: var(--navy); line-height: 1;
+  }
+  .h-lockup .word .em { font-style: italic; font-weight: 400; color: var(--teal-deep); }
+  .h-lockup .rule {
+    width: 1px; height: 44px; background: var(--rule);
+  }
+  .h-lockup .sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: color-mix(in oklab, var(--ink) 60%, transparent);
+    line-height: 1.6;
+  }
+
+  /* ---------- Stacked lockup ---------- */
+  .s-lockup { display: inline-flex; flex-direction: column; align-items: center; gap: 20px; }
+  .s-lockup .word {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: 32px;
+    letter-spacing: 0.005em; color: var(--navy); line-height: 1;
+  }
+  .s-lockup .word .em { font-style: italic; font-weight: 400; color: var(--teal-deep); }
+  .s-lockup .sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: color-mix(in oklab, var(--ink) 55%, transparent);
+  }
+
+  /* ---------- Monogram ---------- */
+  .monogram-cell { background: var(--ivory-warm); }
+
+  /* ---------- Reverse / dark ---------- */
+  .reverse {
+    background: var(--navy-deep);
+    color: var(--ivory);
+    border-top: 1px solid var(--navy-deep);
+    border-bottom: 1px solid var(--navy-deep);
+    padding: 100px 0 110px;
+  }
+  .reverse .sec-head h2 { color: var(--ivory); }
+  .reverse .sec-head h2 em { color: var(--gold-soft); }
+  .reverse .sec-head .idx { color: var(--gold-soft); }
+  .reverse .sec-head .meta { color: color-mix(in oklab, var(--ivory) 60%, transparent); }
+  .reverse .lockups { border-color: color-mix(in oklab, var(--ivory) 14%, transparent); }
+  .reverse .lockup-cell {
+    background: var(--navy-deep);
+    border-color: color-mix(in oklab, var(--ivory) 14%, transparent);
+  }
+  .reverse .lockup-cell .tag { color: color-mix(in oklab, var(--ivory) 50%, transparent); }
+  .reverse .lockup-cell .ref { color: var(--gold-soft); }
+  .reverse .h-lockup .word, .reverse .s-lockup .word { color: var(--ivory); }
+  .reverse .h-lockup .word .em, .reverse .s-lockup .word .em { color: var(--gold-soft); }
+  .reverse .h-lockup .rule { background: color-mix(in oklab, var(--ivory) 22%, transparent); }
+  .reverse .h-lockup .sub, .reverse .s-lockup .sub { color: color-mix(in oklab, var(--ivory) 60%, transparent); }
+  .reverse .monogram-cell { background: #102236; }
+
+  /* ---------- Palette ---------- */
+  .palette { display: grid; grid-template-columns: repeat(7, 1fr); border: 1px solid var(--rule); }
+  .swatch {
+    padding: 18px 18px 22px;
+    aspect-ratio: 3 / 4;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    border-right: 1px solid color-mix(in oklab, var(--ink) 10%, transparent);
+    position: relative;
+  }
+  .swatch:last-child { border-right: none; }
+  .swatch .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 17px; line-height: 1.1;
+  }
+  .swatch .hex {
+    margin-top: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px; letter-spacing: 0.06em;
+  }
+  .swatch .role {
+    position: absolute; top: 16px; left: 16px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 9.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    opacity: 0.55;
+  }
+  /* Per-swatch contrast */
+  .sw-navy        { background: var(--navy);       color: var(--ivory); }
+  .sw-navy-deep   { background: var(--navy-deep);  color: var(--ivory); }
+  .sw-teal        { background: var(--teal);       color: var(--ivory); }
+  .sw-ivory       { background: var(--ivory);      color: var(--navy); }
+  .sw-ivory-warm  { background: var(--ivory-warm); color: var(--navy); }
+  .sw-gold        { background: var(--gold);       color: var(--ivory); }
+  .sw-rose        { background: var(--rose);       color: var(--ivory); }
+
+  /* ---------- Typography ---------- */
+  .type {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px;
+  }
+  .type .specimen {
+    border: 1px solid var(--rule);
+    padding: 36px;
+    background: var(--ivory-soft);
+  }
+  .type .specimen .glyph {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: 152px; line-height: 0.9;
+    color: var(--navy); letter-spacing: -0.02em;
+  }
+  .type .specimen .glyph .em { font-style: italic; color: var(--teal-deep); font-weight: 400; }
+  .type .specimen .glyph .gold { color: var(--gold); }
+  .type .specimen .name {
+    margin-top: 22px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 22px; color: var(--navy);
+  }
+  .type .specimen .meta-row {
+    margin-top: 8px;
+    display: flex; gap: 18px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    color: color-mix(in oklab, var(--ink) 60%, transparent);
+    letter-spacing: 0.06em;
+  }
+  .type .specimen.mono-spec .glyph {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500; font-size: 110px;
+  }
+
+  .type-notes h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 400;
+    letter-spacing: -0.005em;
+    color: var(--navy);
+  }
+  .type-notes h3 em { font-style: italic; color: var(--teal-deep); }
+  .type-notes p {
+    margin: 12px 0 0;
+    font-size: 16px; line-height: 1.6;
+    color: color-mix(in oklab, var(--ink) 78%, transparent);
+  }
+  .type-notes .pair {
+    margin-top: 28px;
+    display: grid; grid-template-columns: 100px 1fr; gap: 18px;
+    align-items: baseline; padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+  .type-notes .pair:first-of-type { border-top: none; padding-top: 0; }
+  .type-notes .pair .lbl { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in oklab, var(--ink) 55%, transparent); }
+  .type-notes .pair .val { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--navy); }
+  .type-notes .pair .val em { font-style: italic; color: var(--teal-deep); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 32px 64px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    letter-spacing: 0.08em; color: color-mix(in oklab, var(--ink) 55%, transparent);
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============== MASTHEAD ============== -->
+  <div class="masthead">
+    <div class="label">Sakib Mostafa · Identity System</div>
+    <div class="center"><h4>An <em>Aperture</em> for the work</h4></div>
+    <div class="right label">Vol. 01 · Ed. May 2026</div>
+  </div>
+
+  <!-- ============== HERO ============== -->
+  <div class="hero">
+    <div class="page">
+      <div class="eyebrow label">Primary lockup</div>
+      <div class="lockup">
+        <!-- Aperture mark — large -->
+        <svg width="148" height="148" viewBox="0 0 100 100" aria-hidden="true">
+          <!-- Outer ring (microscope field / cell membrane) -->
+          <circle cx="50" cy="50" r="42" fill="none" stroke="#142a44" stroke-width="1.4"/>
+          <!-- Inner faint ring for depth -->
+          <circle cx="50" cy="50" r="38.5" fill="none" stroke="#142a44" stroke-width="0.5" stroke-opacity="0.25"/>
+          <!-- Connecting lines (neural / molecular interactions) -->
+          <line x1="38" y1="56" x2="60" y2="62" stroke="#142a44" stroke-width="0.9"/>
+          <line x1="38" y1="56" x2="56" y2="34" stroke="#142a44" stroke-width="0.9"/>
+          <line x1="60" y1="62" x2="56" y2="34" stroke="#4e8a8c" stroke-width="0.9" stroke-opacity="0.85"/>
+          <!-- Primary nodes (navy) -->
+          <circle cx="38" cy="56" r="4.6" fill="#142a44"/>
+          <circle cx="60" cy="62" r="3.4" fill="#142a44"/>
+          <!-- Accent node (gold) — the focal signal -->
+          <circle cx="56" cy="34" r="3.8" fill="#b9883c"/>
+        </svg>
+        <div class="name">Sakib <span class="em">Mostafa</span><span class="dot">.</span></div>
+      </div>
+      <div class="tagline">Interpretable AI for cancer detection &amp; multi-omics integration</div>
+      <div class="meta label">
+        <span>Stanford School of Medicine</span>
+        <span class="sep"></span>
+        <span>Radiation Oncology</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== CONSTRUCTION ============== -->
+  <section>
+    <div class="page">
+      <div class="sec-head">
+        <div class="idx">01 · MARK</div>
+        <h2>The <em>Aperture</em> — a field of view, a network, a focal signal.</h2>
+        <div class="meta">Construction</div>
+      </div>
+      <div class="construction">
+        <div class="plate">
+          <span class="corners"><span class="c-tr-h"></span><span class="c-tr-v"></span><span class="c-bl-h"></span><span class="c-bl-v"></span><span class="c-br-h"></span><span class="c-br-v"></span></span>
+          <!-- Construction view of the mark -->
+          <svg width="100%" viewBox="0 0 100 100">
+            <!-- Construction grid -->
+            <g stroke="#b9883c" stroke-opacity="0.35" stroke-width="0.25">
+              <circle cx="50" cy="50" r="42" fill="none"/>
+              <circle cx="50" cy="50" r="30" fill="none"/>
+              <line x1="50" y1="6" x2="50" y2="94"/>
+              <line x1="6" y1="50" x2="94" y2="50"/>
+              <line x1="14" y1="14" x2="86" y2="86"/>
+              <line x1="86" y1="14" x2="14" y2="86"/>
+            </g>
+            <!-- Bbox marker -->
+            <rect x="6" y="6" width="88" height="88" fill="none" stroke="#b9883c" stroke-opacity="0.4" stroke-width="0.25" stroke-dasharray="1.2 1.2"/>
+
+            <!-- The mark itself -->
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#142a44" stroke-width="1.4"/>
+            <circle cx="50" cy="50" r="38.5" fill="none" stroke="#142a44" stroke-width="0.5" stroke-opacity="0.3"/>
+            <line x1="38" y1="56" x2="60" y2="62" stroke="#142a44" stroke-width="0.9"/>
+            <line x1="38" y1="56" x2="56" y2="34" stroke="#142a44" stroke-width="0.9"/>
+            <line x1="60" y1="62" x2="56" y2="34" stroke="#4e8a8c" stroke-width="0.9" stroke-opacity="0.85"/>
+            <circle cx="38" cy="56" r="4.6" fill="#142a44"/>
+            <circle cx="60" cy="62" r="3.4" fill="#142a44"/>
+            <circle cx="56" cy="34" r="3.8" fill="#b9883c"/>
+
+            <!-- Coordinate annotations -->
+            <g font-family="IBM Plex Mono" font-size="2.6" fill="#142a44" fill-opacity="0.55">
+              <text x="33.4" y="64.5">A</text>
+              <text x="63.5" y="65.5">B</text>
+              <text x="59.5" y="33">C</text>
+            </g>
+          </svg>
+          <div class="plate-label">FIG. 01 · APERTURE GEOMETRY · 100 × 100</div>
+        </div>
+
+        <div class="copy">
+          <h3>A scholarly ring contains an <em>asymmetric cluster</em> of three nodes. One is gold.</h3>
+          <p>The outer ring reads as a microscope field or a cell boundary — the scientist's framed observation. Inside, three connected nodes form a small network: nodes for the neural and the molecular, edges for the interactions both share. The gold node sits at the upper-right, the <em>signal</em> the rest of the field is organized around.</p>
+
+          <div class="legend">
+            <div class="row"><span class="dot" style="background:#142a44"></span><span class="name">Field</span><span>Thin navy ring — the observation, the membrane.</span></div>
+            <div class="row"><span class="dot" style="background:#142a44"></span><span class="name">Node A &amp; B</span><span>Navy — structural relationships in the cluster.</span></div>
+            <div class="row"><span class="dot" style="background:#4e8a8c"></span><span class="name">Edge</span><span>One teal edge — the interpretable connection.</span></div>
+            <div class="row"><span class="dot" style="background:#b9883c"></span><span class="name">Signal</span><span>Warm gold — the finding the work is reaching for.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== LOCKUPS ============== -->
+  <section>
+    <div class="page">
+      <div class="sec-head">
+        <div class="idx">02 · LOCKUPS</div>
+        <h2>Four <em>resolutions</em> of the same identity.</h2>
+        <div class="meta">Horizontal · Stacked · Monogram · Compact</div>
+      </div>
+
+      <div class="lockups">
+
+        <!-- Horizontal lockup -->
+        <div class="lockup-cell">
+          <span class="tag">A · Horizontal</span>
+          <span class="ref">01 / 04</span>
+          <div class="h-lockup">
+            <svg width="64" height="64" viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#142a44" stroke-width="1.6"/>
+              <line x1="38" y1="56" x2="60" y2="62" stroke="#142a44" stroke-width="1.1"/>
+              <line x1="38" y1="56" x2="56" y2="34" stroke="#142a44" stroke-width="1.1"/>
+              <line x1="60" y1="62" x2="56" y2="34" stroke="#4e8a8c" stroke-width="1.1"/>
+              <circle cx="38" cy="56" r="4.8" fill="#142a44"/>
+              <circle cx="60" cy="62" r="3.6" fill="#142a44"/>
+              <circle cx="56" cy="34" r="4" fill="#b9883c"/>
+            </svg>
+            <div class="word">Sakib <span class="em">Mostafa</span></div>
+            <div class="rule"></div>
+            <div class="sub">PhD<br>Postdoctoral<br>Stanford</div>
+          </div>
+        </div>
+
+        <!-- Stacked lockup -->
+        <div class="lockup-cell">
+          <span class="tag">B · Stacked</span>
+          <span class="ref">02 / 04</span>
+          <div class="s-lockup">
+            <svg width="72" height="72" viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#142a44" stroke-width="1.6"/>
+              <line x1="38" y1="56" x2="60" y2="62" stroke="#142a44" stroke-width="1.1"/>
+              <line x1="38" y1="56" x2="56" y2="34" stroke="#142a44" stroke-width="1.1"/>
+              <line x1="60" y1="62" x2="56" y2="34" stroke="#4e8a8c" stroke-width="1.1"/>
+              <circle cx="38" cy="56" r="4.8" fill="#142a44"/>
+              <circle cx="60" cy="62" r="3.6" fill="#142a44"/>
+              <circle cx="56" cy="34" r="4" fill="#b9883c"/>
+            </svg>
+            <div class="word">Sakib <span class="em">Mostafa</span></div>
+            <div class="sub">AI · Cancer · Multi-omics</div>
+          </div>
+        </div>
+
+        <!-- Monogram -->
+        <div class="lockup-cell monogram-cell">
+          <span class="tag">C · Monogram</span>
+          <span class="ref">03 / 04</span>
+          <svg width="160" height="160" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#142a44" stroke-width="1.4"/>
+            <circle cx="50" cy="50" r="38.5" fill="none" stroke="#142a44" stroke-width="0.5" stroke-opacity="0.3"/>
+            <!-- SM serif initials inside -->
+            <text x="50" y="58" text-anchor="middle"
+                  font-family="Cormorant Garamond, serif"
+                  font-size="34" font-weight="500"
+                  fill="#142a44" letter-spacing="-1">
+              <tspan>S</tspan><tspan font-style="italic" fill="#356f72" dx="-1">M</tspan>
+            </text>
+            <!-- Gold dot accent -->
+            <circle cx="73" cy="29" r="3.2" fill="#b9883c"/>
+          </svg>
+        </div>
+
+        <!-- Compact (favicon scale) -->
+        <div class="lockup-cell">
+          <span class="tag">D · Compact / Favicon</span>
+          <span class="ref">04 / 04</span>
+          <div style="display:flex; align-items:center; gap:42px;">
+            <!-- 96 -->
+            <div style="text-align:center;">
+              <svg width="96" height="96" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#142a44" stroke-width="2.2"/>
+                <circle cx="38" cy="56" r="6" fill="#142a44"/>
+                <circle cx="60" cy="62" r="4.4" fill="#142a44"/>
+                <circle cx="56" cy="34" r="5" fill="#b9883c"/>
+              </svg>
+              <div class="num" style="margin-top:8px;">96 px</div>
+            </div>
+            <!-- 48 -->
+            <div style="text-align:center;">
+              <svg width="48" height="48" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#142a44" stroke-width="3"/>
+                <circle cx="38" cy="56" r="8" fill="#142a44"/>
+                <circle cx="60" cy="62" r="6" fill="#142a44"/>
+                <circle cx="56" cy="34" r="7" fill="#b9883c"/>
+              </svg>
+              <div class="num" style="margin-top:8px;">48 px</div>
+            </div>
+            <!-- 24 -->
+            <div style="text-align:center;">
+              <svg width="24" height="24" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#142a44" stroke-width="6"/>
+                <circle cx="42" cy="58" r="11" fill="#142a44"/>
+                <circle cx="58" cy="34" r="11" fill="#b9883c"/>
+              </svg>
+              <div class="num" style="margin-top:8px;">24 px</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== REVERSE / DARK ============== -->
+  <section class="reverse">
+    <div class="page">
+      <div class="sec-head">
+        <div class="idx">03 · REVERSE</div>
+        <h2>The same mark, <em>quietly luminous</em>, against deep navy.</h2>
+        <div class="meta">On dark · LinkedIn header · Slide title</div>
+      </div>
+
+      <div class="lockups">
+
+        <div class="lockup-cell">
+          <span class="tag">A · Horizontal · Reverse</span>
+          <span class="ref">01 / 04</span>
+          <div class="h-lockup">
+            <svg width="64" height="64" viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#f5efe3" stroke-width="1.6"/>
+              <line x1="38" y1="56" x2="60" y2="62" stroke="#f5efe3" stroke-width="1.1"/>
+              <line x1="38" y1="56" x2="56" y2="34" stroke="#f5efe3" stroke-width="1.1"/>
+              <line x1="60" y1="62" x2="56" y2="34" stroke="#d6b376" stroke-width="1.1"/>
+              <circle cx="38" cy="56" r="4.8" fill="#f5efe3"/>
+              <circle cx="60" cy="62" r="3.6" fill="#f5efe3"/>
+              <circle cx="56" cy="34" r="4" fill="#d6b376"/>
+            </svg>
+            <div class="word">Sakib <span class="em">Mostafa</span></div>
+            <div class="rule"></div>
+            <div class="sub">PhD<br>Postdoctoral<br>Stanford</div>
+          </div>
+        </div>
+
+        <div class="lockup-cell">
+          <span class="tag">B · Stacked · Reverse</span>
+          <span class="ref">02 / 04</span>
+          <div class="s-lockup">
+            <svg width="72" height="72" viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#f5efe3" stroke-width="1.6"/>
+              <line x1="38" y1="56" x2="60" y2="62" stroke="#f5efe3" stroke-width="1.1"/>
+              <line x1="38" y1="56" x2="56" y2="34" stroke="#f5efe3" stroke-width="1.1"/>
+              <line x1="60" y1="62" x2="56" y2="34" stroke="#d6b376" stroke-width="1.1"/>
+              <circle cx="38" cy="56" r="4.8" fill="#f5efe3"/>
+              <circle cx="60" cy="62" r="3.6" fill="#f5efe3"/>
+              <circle cx="56" cy="34" r="4" fill="#d6b376"/>
+            </svg>
+            <div class="word">Sakib <span class="em">Mostafa</span></div>
+            <div class="sub">AI · Cancer · Multi-omics</div>
+          </div>
+        </div>
+
+        <div class="lockup-cell monogram-cell">
+          <span class="tag">C · Monogram · Reverse</span>
+          <span class="ref">03 / 04</span>
+          <svg width="160" height="160" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#f5efe3" stroke-width="1.4"/>
+            <circle cx="50" cy="50" r="38.5" fill="none" stroke="#f5efe3" stroke-width="0.5" stroke-opacity="0.3"/>
+            <text x="50" y="58" text-anchor="middle"
+                  font-family="Cormorant Garamond, serif"
+                  font-size="34" font-weight="500"
+                  fill="#f5efe3" letter-spacing="-1">
+              <tspan>S</tspan><tspan font-style="italic" fill="#7fb3b3" dx="-1">M</tspan>
+            </text>
+            <circle cx="73" cy="29" r="3.2" fill="#d6b376"/>
+          </svg>
+        </div>
+
+        <div class="lockup-cell">
+          <span class="tag">D · Compact · Reverse</span>
+          <span class="ref">04 / 04</span>
+          <div style="display:flex; align-items:center; gap:42px;">
+            <div style="text-align:center;">
+              <svg width="96" height="96" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#f5efe3" stroke-width="2.2"/>
+                <circle cx="38" cy="56" r="6" fill="#f5efe3"/>
+                <circle cx="60" cy="62" r="4.4" fill="#f5efe3"/>
+                <circle cx="56" cy="34" r="5" fill="#d6b376"/>
+              </svg>
+              <div class="num" style="margin-top:8px; color:rgba(245,239,227,0.55);">96 px</div>
+            </div>
+            <div style="text-align:center;">
+              <svg width="48" height="48" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#f5efe3" stroke-width="3"/>
+                <circle cx="38" cy="56" r="8" fill="#f5efe3"/>
+                <circle cx="60" cy="62" r="6" fill="#f5efe3"/>
+                <circle cx="56" cy="34" r="7" fill="#d6b376"/>
+              </svg>
+              <div class="num" style="margin-top:8px; color:rgba(245,239,227,0.55);">48 px</div>
+            </div>
+            <div style="text-align:center;">
+              <svg width="24" height="24" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#f5efe3" stroke-width="6"/>
+                <circle cx="42" cy="58" r="11" fill="#f5efe3"/>
+                <circle cx="58" cy="34" r="11" fill="#d6b376"/>
+              </svg>
+              <div class="num" style="margin-top:8px; color:rgba(245,239,227,0.55);">24 px</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PALETTE ============== -->
+  <section>
+    <div class="page">
+      <div class="sec-head">
+        <div class="idx">04 · PALETTE</div>
+        <h2>A <em>quiet, scholarly</em> spectrum — navy, teal, ivory, and warm gold.</h2>
+        <div class="meta">7 tones · WCAG-aware</div>
+      </div>
+
+      <div class="palette">
+        <div class="swatch sw-navy-deep">
+          <span class="role">Primary · 01</span>
+          <div class="name">Midnight Field</div>
+          <div class="hex">#0B1827</div>
+        </div>
+        <div class="swatch sw-navy">
+          <span class="role">Primary · 02</span>
+          <div class="name">Deep Navy</div>
+          <div class="hex">#142A44</div>
+        </div>
+        <div class="swatch sw-teal">
+          <span class="role">Secondary</span>
+          <div class="name">Scholar Teal</div>
+          <div class="hex">#4E8A8C</div>
+        </div>
+        <div class="swatch sw-ivory">
+          <span class="role">Ground · 01</span>
+          <div class="name">Soft Ivory</div>
+          <div class="hex">#F5EFE3</div>
+        </div>
+        <div class="swatch sw-ivory-warm">
+          <span class="role">Ground · 02</span>
+          <div class="name">Warm Vellum</div>
+          <div class="hex">#ECE4D3</div>
+        </div>
+        <div class="swatch sw-gold">
+          <span class="role">Accent · 01</span>
+          <div class="name">Manuscript Gold</div>
+          <div class="hex">#B9883C</div>
+        </div>
+        <div class="swatch sw-rose">
+          <span class="role">Accent · 02</span>
+          <div class="name">Folio Rose</div>
+          <div class="hex">#B56B6B</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== TYPE ============== -->
+  <section>
+    <div class="page">
+      <div class="sec-head">
+        <div class="idx">05 · TYPE</div>
+        <h2>A serif <em>scholar</em> and a monospaced <em>technician</em>, paired.</h2>
+        <div class="meta">Cormorant Garamond · IBM Plex Mono</div>
+      </div>
+
+      <div class="type">
+        <div>
+          <div class="specimen">
+            <div class="glyph">A<span class="em">a</span><span class="gold">.</span></div>
+            <div class="name">Cormorant Garamond — Medium &amp; Italic</div>
+            <div class="meta-row">
+              <span>Latin · 800 glyphs</span>
+              <span>Wt 300–700</span>
+              <span>Display + Body</span>
+            </div>
+          </div>
+
+          <div class="specimen mono-spec" style="margin-top:24px;">
+            <div class="glyph">Aa01</div>
+            <div class="name">IBM Plex Mono — Regular &amp; Medium</div>
+            <div class="meta-row">
+              <span>Tabular figures</span>
+              <span>Wt 400–500</span>
+              <span>UI · Labels · Captions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="type-notes">
+          <h3>The wordmark is set in <em>Cormorant Garamond</em>, drawn after Claude Garamont's 16th-century romans.</h3>
+          <p>It carries the long-sentence rhythm of an academic press without feeling antique. The italic does the work of emphasis on the surname — softer, slightly forward-leaning, a single moment of motion in an otherwise still composition.</p>
+
+          <div class="pair">
+            <div class="lbl">Wordmark</div>
+            <div class="val">Cormorant <em>Garamond</em> · 500 · -0.01em</div>
+          </div>
+          <div class="pair">
+            <div class="lbl">Italic</div>
+            <div class="val">Reserved for surname, taglines, captions.</div>
+          </div>
+          <div class="pair">
+            <div class="lbl">UI / Mono</div>
+            <div class="val">IBM Plex Mono · 400/500 · 0.06–0.18em</div>
+          </div>
+          <div class="pair">
+            <div class="lbl">Numerals</div>
+            <div class="val">Lining figures in body; tabular in tables.</div>
+          </div>
+          <div class="pair">
+            <div class="lbl">Color</div>
+            <div class="val">Wordmark in Deep Navy. Italic and edges may take Scholar Teal. The gold reserved for the accent dot or full-stop only.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer>
+    <span>© 2026 · Sakib Mostafa</span>
+    <span>Identity guide · Vol. 01 · Aperture</span>
+    <span>Stanford School of Medicine</span>
+  </footer>
+
+</body>
+</html>

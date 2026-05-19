@@ -1,680 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
+<!-- Nav + footer are duplicated across all 6 pages by design (no build step).
+     Edit all 6 when changing shared chrome. Canonical copy: index.html. -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #ffffff;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Animated background particles */
-        .bg-particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(64, 224, 208, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
-            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.3; }
-        }
-
-        /* Glassmorphism container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 1.5rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        header:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #40e0d0;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        nav a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(64, 224, 208, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        nav a:hover::before {
-            left: 100%;
-        }
-
-        nav a:hover {
-            background: rgba(64, 224, 208, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            margin-bottom: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(64, 224, 208, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #40e0d0, #ff6b6b, #4ecdc4);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-shift 4s ease infinite;
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #40e0d0, #4ecdc4);
-            color: #0f0f23;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(64, 224, 208, 0.3);
-        }
-
-        /* Sections */
-        .section {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            transition: all 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #40e0d0;
-            position: relative;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #40e0d0, #ff6b6b);
-            border-radius: 2px;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .skill-item {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #40e0d0, #ff6b6b, #4ecdc4);
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-item:hover::before {
-            transform: translateX(0);
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px);
-            background: rgba(64, 224, 208, 0.1);
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(64, 224, 208, 0.05) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .project-card:hover::before {
-            opacity: 1;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border-color: rgba(64, 224, 208, 0.3);
-        }
-
-        .project-card h3 {
-            color: #40e0d0;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .project-card p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1.5rem;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            color: #40e0d0;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid #40e0d0;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .project-link:hover {
-            background: #40e0d0;
-            color: #0f0f23;
-            transform: scale(1.05);
-        }
-
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #40e0d0;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            color: #ffffff;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #40e0d0;
-            box-shadow: 0 0 20px rgba(64, 224, 208, 0.2);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            margin-top: 3rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-link {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background: rgba(64, 224, 208, 0.1);
-            border: 1px solid rgba(64, 224, 208, 0.3);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 48px;
-            color: #40e0d0;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: #40e0d0;
-            color: #0f0f23;
-            transform: translateY(-3px) rotate(5deg);
-            box-shadow: 0 10px 20px rgba(64, 224, 208, 0.3);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero {
-                padding: 2rem 1rem;
-            }
-
-            .section {
-                padding: 2rem 1rem;
-            }
-
-            .skills-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Loading animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sakib Mostafa · Postdoctoral Scholar · Stanford</title>
+  <meta name="description" content="Sakib Mostafa builds interpretable AI for cancer detection, liquid biopsy, and multi-omics integration. Postdoctoral Scholar, Stanford School of Medicine.">
+  <link rel="canonical" href="https://sakibmostafa.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sakib Mostafa · Postdoctoral Scholar · Stanford">
+  <meta property="og:description" content="Building interpretable AI for cancer detection, liquid biopsy, and multi-omics integration.">
+  <meta property="og:url" content="https://sakibmostafa.com/">
+  <!-- TODO(placeholder): og-image — supply og.png (1200x630) -->
+  <meta property="og:image" content="https://sakibmostafa.com/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <!-- PLACEHOLDER: rasterize from favicon.svg before deploy -->
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon-180.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Animated background particles -->
-    <div class="bg-particles" id="particles"></div>
+<div class="a-root page">
 
-    <div class="container">
-        <!-- Header -->
-        <header class="fade-in">
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <!-- Hero Section -->
-        <section id="home" class="hero fade-in">
-            <div class="hero-content">
-                <h1>Your Name</h1>
-                <p>Full Stack Developer & Creative Problem Solver</p>
-                <a href="#contact" class="cta-button">Get In Touch</a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section fade-in">
-            <h2>About Me</h2>
-            <p>I'm a passionate developer with experience in creating innovative digital solutions. I love combining creativity with technical expertise to build applications that make a difference. With a strong foundation in modern web technologies and a keen eye for design, I strive to deliver exceptional user experiences.</p>
-            <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying the great outdoors. I believe in continuous learning and staying up-to-date with the latest industry trends.</p>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section fade-in">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <h3>Frontend</h3>
-                    <p>React, Vue.js, HTML5, CSS3, JavaScript ES6+</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Backend</h3>
-                    <p>Node.js, Python, Express, Django, REST APIs</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Database</h3>
-                    <p>MongoDB, PostgreSQL, MySQL, Redis</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Tools & Others</h3>
-                    <p>Git, Docker, AWS, CI/CD, Figma</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section fade-in">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>E-Commerce Platform</h3>
-                    <p>A full-stack e-commerce solution built with React and Node.js, featuring real-time inventory management, secure payment processing, and responsive design.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Task Management App</h3>
-                    <p>A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features built with Vue.js and Socket.io.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Weather Dashboard</h3>
-                    <p>An interactive weather dashboard that provides real-time weather data, forecasts, and beautiful visualizations using React and Chart.js.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section fade-in">
-            <h2>Get In Touch</h2>
-            <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="fade-in">
-            <div class="social-links">
-                <a href="#" class="social-link">📧</a>
-                <a href="#" class="social-link">💼</a>
-                <a href="#" class="social-link">🐱</a>
-                <a href="#" class="social-link">🐦</a>
-            </div>
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
-        </footer>
+  <nav class="nav">
+    <div class="nav-brand">
+      <span class="a-logo-mark">
+        <svg viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">
+          <circle cx="50" cy="50" r="42" fill="none" stroke="#15151a" stroke-width="2"/>
+          <line x1="38" y1="56" x2="60" y2="62" stroke="#15151a" stroke-width="1.4"/>
+          <line x1="38" y1="56" x2="56" y2="34" stroke="#15151a" stroke-width="1.4"/>
+          <line x1="60" y1="62" x2="56" y2="34" stroke="#4e8a8c" stroke-width="1.4"/>
+          <circle cx="38" cy="56" r="5.2" fill="#15151a"/>
+          <circle cx="60" cy="62" r="3.8" fill="#15151a"/>
+          <circle cx="56" cy="34" r="4.4" fill="#b9883c"/>
+        </svg>
+      </span>
+      <span class="nav-brand-name">Sakib Mostafa</span>
+      <span class="nav-brand-sub">· Postdoctoral Scholar · Stanford</span>
     </div>
+    <ul class="nav-links">
+      <li><a class="nav-link is-active" href="index.html">Home</a></li>
+      <li><a class="nav-link" href="research.html">Research</a></li>
+      <li><a class="nav-link" href="publications.html">Publications</a></li>
+      <li><a class="nav-link" href="teaching.html">Teaching</a></li>
+      <li><a class="nav-link" href="cv.html">CV</a></li>
+      <li><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <script>
-        // Create animated background particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
+  <main class="page-body">
+    <section class="section--home">
+      <div class="a-hat-wrap">
+        <svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true">
+          <circle cx="50" cy="50" r="42" fill="none" stroke="#15151a" stroke-width="1.1"/>
+          <circle cx="50" cy="50" r="38.5" fill="none" stroke="#15151a" stroke-width="0.4" stroke-opacity="0.3"/>
+          <line x1="38" y1="56" x2="60" y2="62" stroke="#15151a" stroke-width="0.85"/>
+          <line x1="38" y1="56" x2="56" y2="34" stroke="#15151a" stroke-width="0.85"/>
+          <line x1="60" y1="62" x2="56" y2="34" stroke="#4e8a8c" stroke-width="0.85"/>
+          <circle cx="38" cy="56" r="4.6" fill="#15151a"/>
+          <circle cx="60" cy="62" r="3.4" fill="#15151a"/>
+          <circle cx="56" cy="34" r="3.8" fill="#b9883c"/>
+        </svg>
+      </div>
 
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                // Random size between 2px and 8px
-                const size = Math.random() * 6 + 2;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                
-                // Random position
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                
-                // Random animation delay
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
+      <div class="hero">
+        <h1 class="h1-hero">Sakib Mostafa</h1>
+        <p class="lede">Building interpretable AI for cancer detection, liquid biopsy, and multi-omics integration.</p>
+        <p class="bio">I develop deep learning frameworks that translate biological signals — cfRNA, multi-omics, networks — into images so vision foundation models can see them. My current work spans liquid biopsy for early cancer detection, multimodal AI for imaging-genomics integration, and graph foundation models for biological networks.</p>
+        <div class="hero-ctas">
+          <a class="a-tag cta cta--fill" href="research.html">View research →</a>
+          <!-- TODO(placeholder): cv-pdf — drop cv.pdf at repo root -->
+          <a class="a-tag cta" href="cv.pdf" data-placeholder="cv-pdf">Download CV (PDF)</a>
+          <a class="a-tag cta" href="mailto:sakib.mostafa@stanford.edu">sakib.mostafa@stanford.edu</a>
+        </div>
+      </div>
 
-        // Initialize particles when page loads
-        document.addEventListener('DOMContentLoaded', createParticles);
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value">3<span class="dot">.</span></div>
+          <div class="stat-label">Manuscripts under review</div>
+          <div class="stat-note">Nature, Nat Biomed Eng, Nat Comp Sci</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">$75K<span class="dot">.</span></div>
+          <div class="stat-label">Stanford Cancer Institute Innovation Award</div>
+          <div class="stat-note">December 2025</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">19<span class="dot">.</span></div>
+          <div class="stat-label">Peer-reviewed publications</div>
+          <div class="stat-note">+ 1 book chapter · 425+ citations</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">2<span class="dot">.</span></div>
+          <div class="stat-label">Patents filed (Stanford OTL)</div>
+          <div class="stat-note">Graph foundation models · Tabular-to-image</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">$95K<span class="dot">.</span></div>
+          <div class="stat-label">Research grants secured</div>
+          <div class="stat-note">Plus CAD 168.5K in scholarships</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">6<span class="dot">.</span></div>
+          <div class="stat-label">Years teaching &amp; mentoring</div>
+          <div class="stat-note">7 TAships · 7 trainees supervised</div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+  <footer class="footer">
+    <span>© 2026 Sakib Mostafa · Stanford School of Medicine</span>
+    <div class="footer-links">
+      <a href="mailto:sakib.mostafa@stanford.edu" class="a-link-underline">sakib.mostafa@stanford.edu</a>
+      <!-- TODO(placeholder): scholar -->
+      <a href="#" data-placeholder="scholar" class="a-link-underline">Google Scholar</a>
+      <!-- TODO(placeholder): linkedin -->
+      <a href="#" data-placeholder="linkedin" class="a-link-underline">LinkedIn</a>
+    </div>
+  </footer>
 
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('.section, .hero').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(section);
-        });
-
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
-        });
-
-        // Add hover effect to skill items
-        document.querySelectorAll('.skill-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px) scale(1.02)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-    </script>
+</div>
 </body>
 </html>
