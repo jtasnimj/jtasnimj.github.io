@@ -18,7 +18,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260811-3">
+  <link rel="stylesheet" href="tool-animation.css?v=20260811-1">
   <script src="site.js?v=20260811-3" defer></script>
+  <script src="tool-animation.js?v=20260811-1" defer></script>
 </head>
 <body>
 <div class="a-root page">
@@ -66,12 +68,20 @@
         </div>
       </div>
 
-      <figure class="hero-cover reveal">
-        <div class="hero-cover-window">
-          <img src="assets/dynomap-cover.png" alt="Dynomap cover showing tabular features flowing into a connected spatial graph with three learned regions.">
+      <section class="hero-tools reveal" data-tool-animation aria-label="Animated overview of research tools">
+        <div class="tool-tabs" role="tablist" aria-label="Research tools">
+          <button class="tool-tab is-active" type="button" role="tab" aria-selected="true" data-tool="dynomap" style="--tool-color:#9b4d3f"><span>Tables → maps</span><strong>Dynomap</strong></button>
+          <button class="tool-tab" type="button" role="tab" aria-selected="false" data-tool="graph" style="--tool-color:#337f82"><span>Graphs → images</span><strong>Graph2Image</strong></button>
+          <button class="tool-tab" type="button" role="tab" aria-selected="false" data-tool="cell" style="--tool-color:#b98636"><span>Cells → representations</span><strong>scVision</strong></button>
         </div>
-        <figcaption><span>Existing Dynomap cover</span><strong>features → connected spatial structure</strong></figcaption>
-      </figure>
+        <div class="tool-stage">
+          <canvas class="tool-animation-canvas" aria-hidden="true"></canvas>
+          <div class="tool-copy" style="--tool-color:#9b4d3f">
+            <div><small data-tool-kicker>Dynomap</small><strong data-tool-headline>Tables learn their own spatial organization.</strong></div>
+            <div class="tool-phase" data-tool-phase>Features move · neighborhoods emerge · attributions return to biology</div>
+          </div>
+        </div>
+      </section>
 
       <div class="stats stats--hero reveal" aria-label="Research at a glance">
         <div class="stat">
