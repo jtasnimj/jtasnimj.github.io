@@ -1,165 +1,126 @@
 <!doctype html>
-<!-- Nav + footer are duplicated across all 6 pages by design (no build step).
-     Edit all 6 when changing shared chrome. Canonical copy: index.html. -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sakib Mostafa · Research · Stanford</title>
-  <meta name="description" content="Interpretable AI for cancer detection, liquid biopsy, multi-omics integration, and graph foundation models — current work and manuscripts under review at Nature-family journals.">
+  <meta name="theme-color" content="#f7f3ed">
+  <title>Sakib Mostafa · Research</title>
+  <meta name="description" content="Research by Sakib Mostafa in interpretable biomedical AI, liquid biopsy, graph learning, multimodal cancer analysis, and single-cell foundation models.">
   <link rel="canonical" href="https://sakibmostafa.com/research.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Sakib Mostafa · Research">
-  <meta property="og:description" content="Interpretable AI for cancer detection, liquid biopsy, multi-omics integration, and graph foundation models.">
+  <meta property="og:description" content="Representation learning that makes biomedical structure visible and scientifically inspectable.">
   <meta property="og:url" content="https://sakibmostafa.com/research.html">
-  <!-- TODO(placeholder): og-image — supply og.png (1200x630) -->
   <meta property="og:image" content="https://sakibmostafa.com/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <!-- PLACEHOLDER: rasterize from favicon.svg before deploy -->
-  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="apple-touch-icon-180.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
 <div class="a-root page">
-
-  <nav class="nav">
-    <div class="nav-brand">
-      <span class="a-logo-mark">
-        <svg viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">
-          <circle cx="50" cy="50" r="42" fill="none" stroke="#15151a" stroke-width="2"/>
-          <line x1="38" y1="56" x2="60" y2="62" stroke="#15151a" stroke-width="1.4"/>
-          <line x1="38" y1="56" x2="56" y2="34" stroke="#15151a" stroke-width="1.4"/>
-          <line x1="60" y1="62" x2="56" y2="34" stroke="#4e8a8c" stroke-width="1.4"/>
-          <circle cx="38" cy="56" r="5.2" fill="#15151a"/>
-          <circle cx="60" cy="62" r="3.8" fill="#15151a"/>
-          <circle cx="56" cy="34" r="4.4" fill="#b9883c"/>
-        </svg>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="nav-brand" href="index.html" aria-label="Sakib Mostafa home">
+      <span class="a-logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 100 100" width="30" height="30"><circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="2"/><line x1="38" y1="56" x2="60" y2="62" stroke="currentColor" stroke-width="1.4"/><line x1="38" y1="56" x2="56" y2="34" stroke="currentColor" stroke-width="1.4"/><line x1="60" y1="62" x2="56" y2="34" stroke="#9b4d3f" stroke-width="1.4"/><circle cx="38" cy="56" r="5.2" fill="currentColor"/><circle cx="60" cy="62" r="3.8" fill="currentColor"/><circle cx="56" cy="34" r="4.4" fill="#cf8f35"/></svg>
       </span>
-      <span class="nav-brand-name">Sakib Mostafa</span>
-      <span class="nav-brand-sub">· Postdoctoral Scholar · Stanford</span>
-    </div>
+      <span><span class="nav-brand-name">Sakib Mostafa</span><span class="nav-brand-sub">Stanford Medicine</span></span>
+    </a>
     <ul class="nav-links">
       <li><a class="nav-link" href="index.html">Home</a></li>
       <li><a class="nav-link is-active" href="research.html">Research</a></li>
       <li><a class="nav-link" href="publications.html">Publications</a></li>
-      <li><a class="nav-link" href="teaching.html">Teaching</a></li>
+      <li><a class="nav-link" href="index.html#news">News</a></li>
       <li><a class="nav-link" href="cv.html">CV</a></li>
       <li><a class="nav-link" href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <main class="page-body">
-    <section class="section">
-      <div class="a-section-label">Currently · April 2025 — Present</div>
-      <h1 class="h1-page mw-820">Building interpretable AI to read the biology hidden inside high-dimensional clinical data.</h1>
+  <main id="main" class="page-body">
+    <section class="research-hero section">
+      <div class="a-section-label reveal">Research program · Stanford Radiation Oncology</div>
+      <h1 class="research-title reveal">Representation is part of the <em>scientific question.</em></h1>
+      <div class="research-intro reveal">
+        <p>Biomedical measurements often arrive in forms that hide their internal relationships: columns in a table, nodes in a graph, or genes in a sparse vector. I develop models that learn or preserve those relationships as spatial structure.</p>
+        <p>The result is a shared research direction across cancer, genomics, and single-cell biology: stronger prediction paired with a representation that scientists can inspect, perturb, and reason about.</p>
+      </div>
+    </section>
 
-      <!-- Nature submissions -->
-      <div class="mt-56">
-        <div class="a-section-label">Under review · Nature-family journals</div>
-        <div class="nature-grid">
-          <div class="nature-item">
-            <div class="nature-head">
-              <div class="nature-title">Transformation of Biological Networks into Images via Semantic Cartography for Visual Interpretation and Scalable Deep Analysis</div>
-              <div class="nature-venue">Nature Computational Science</div>
-            </div>
-            <div class="nature-meta">
-              <span>Under revision (first-round peer review)</span>
-              <span class="dot-sep"></span>
-              <!-- TODO(placeholder): preprint -->
-              <a href="#" data-placeholder="preprint" class="a-link-underline a-link-underline--soft">arxiv.org/abs/2512.07040</a>
-            </div>
-          </div>
-          <div class="nature-item">
-            <div class="nature-head">
-              <div class="nature-title">Language-Encoded Structural Topology Enables Generalizable Foundation Models for Graph-Structured Data</div>
-              <div class="nature-venue">Nature</div>
-            </div>
-            <div class="nature-meta">
-              <span>Under editorial review</span>
-              <span class="dot-sep"></span>
-              <!-- TODO(placeholder): preprint -->
-              <a href="#" data-placeholder="preprint" class="a-link-underline a-link-underline--soft">arxiv.org/abs/2604.06391</a>
-            </div>
-          </div>
-          <div class="nature-item">
-            <div class="nature-head">
-              <div class="nature-title">Vision-based Deep Learning Analysis of Unordered Biomedical Tabular Datasets via Optimal Spatial Cartography</div>
-              <div class="nature-venue">Nature Biomedical Engineering</div>
-            </div>
-            <div class="nature-meta">
-              <span>Under external peer review</span>
-              <span class="dot-sep"></span>
-              <!-- TODO(placeholder): preprint -->
-              <a href="#" data-placeholder="preprint" class="a-link-underline a-link-underline--soft">arxiv.org/abs/2603.22675</a>
-            </div>
-          </div>
-        </div>
+    <section class="section research-platforms">
+      <div class="section-heading reveal">
+        <div><div class="a-section-label">Public platforms</div><h2>Three scales of biological structure.</h2></div>
+        <p>Each project has an interactive site with the paper, central figures, demonstrations, and examples. These are research artifacts—not generic software demos.</p>
       </div>
 
-      <!-- Research areas -->
-      <div class="mt-56">
-        <div class="a-section-label">Research areas</div>
-        <div class="areas-grid">
-          <div>
-            <div class="area-head">
-              <span class="area-num">01</span>
-              <h3 class="area-title">Liquid Biopsy &amp; cfRNA</h3>
-            </div>
-            <p class="area-body">Interpretable models for cancer detection, subtype prediction, and staging across RARE-Seq and independent cfRNA cohorts. Reduced gene panels and biologically grounded attribution maps for clinical adoption.</p>
-          </div>
-          <div>
-            <div class="area-head">
-              <span class="area-num">02</span>
-              <h3 class="area-title">Multimodal Cancer AI</h3>
-            </div>
-            <p class="area-body">Architectures that integrate molecular omics with medical imaging to surface genetic programs linked to imaging phenotypes.</p>
-          </div>
-          <div>
-            <div class="area-head">
-              <span class="area-num">03</span>
-              <h3 class="area-title">Graph Foundation Models</h3>
-            </div>
-            <p class="area-body">Graph-to-image and language-encoded topology frameworks that train vision foundation models on biological networks — outperforming GNNs across benchmarks.</p>
-          </div>
-          <div>
-            <div class="area-head">
-              <span class="area-num">04</span>
-              <h3 class="area-title">Explainable AI</h3>
-            </div>
-            <p class="area-body">XAI techniques for model selection and decision interpretability, spanning plant phenotyping, cancer, and software analytics.</p>
-          </div>
-        </div>
+      <div class="platform-list">
+        <article class="platform-row reveal">
+          <div class="platform-index">01</div>
+          <div class="platform-name"><span>Tabular data</span><h3>Dynomap</h3></div>
+          <div class="platform-copy"><p>A fully differentiable framework that jointly learns feature placement and prediction. The learned map exposes spatial neighborhoods of predictive variables while enabling vision models to operate on unordered biomedical tables.</p><div class="platform-tags"><span>Liquid biopsy</span><span>Clinical data</span><span>Explainability</span></div></div>
+          <div class="platform-action"><strong>up to 18%</strong><span>cancer-subtype accuracy gain reported</span><a href="https://islamlab.org/dynomap/" target="_blank" rel="noopener noreferrer">Explore Dynomap ↗</a><a href="https://arxiv.org/abs/2603.22675" target="_blank" rel="noopener noreferrer">arXiv</a></div>
+        </article>
+        <article class="platform-row reveal">
+          <div class="platform-index">02</div>
+          <div class="platform-name"><span>Biological networks</span><h3>Graph2Image</h3></div>
+          <div class="platform-copy"><p>A semantic-cartography framework that transforms networks into image sets. It gives image models multi-scale and global context without forcing billion-node graphs through conventional message-passing pipelines.</p><div class="platform-tags"><span>Protein networks</span><span>Scalability</span><span>Multimodal AI</span></div></div>
+          <div class="platform-action"><strong>&gt;1B nodes</strong><span>analyzed on a personal computer</span><a href="https://islamlab.org/graph2image/" target="_blank" rel="noopener noreferrer">Explore Graph2Image ↗</a><a href="https://arxiv.org/abs/2512.07040" target="_blank" rel="noopener noreferrer">arXiv</a></div>
+        </article>
+        <article class="platform-row reveal">
+          <div class="platform-index">03</div>
+          <div class="platform-name"><span>Single cells</span><h3>scVision</h3></div>
+          <div class="platform-copy"><p>A vision foundation model that uses optimal transport to give genes stable spatial homes. Co-expression becomes local texture, allowing one frozen encoder to support annotation, integration, gene-program discovery, perturbation, and disease-axis analysis.</p><div class="platform-tags"><span>Single-cell RNA</span><span>Foundation models</span><span>Zero-shot learning</span></div></div>
+          <div class="platform-action"><strong>72M cells</strong><span>used for masked-image pretraining</span><a href="https://islamlab.org/scvision/" target="_blank" rel="noopener noreferrer">Explore scVision ↗</a><a href="https://arxiv.org/abs/2607.14163" target="_blank" rel="noopener noreferrer">arXiv</a></div>
+        </article>
       </div>
+    </section>
 
-      <!-- In preparation -->
-      <div class="mt-56">
-        <div class="a-section-label">In preparation</div>
-        <ul class="bullet-list">
-          <li><span class="bullet bullet--mono">·</span><span>Streamlining Multi-Modal Model for Multi-Omics Integration — Optimal Transport across omics channels.</span></li>
-          <li><span class="bullet bullet--mono">·</span><span>Knowledge Graph Modulated Deep Learning for Limited-Sample Clinical Data Analysis — GraphNode classifier with global pathway context.</span></li>
-          <li><span class="bullet bullet--mono">·</span><span>A Vision Foundation Model for Biological Networks via Image Transformation of Graph Topology.</span></li>
-          <li><span class="bullet bullet--mono">·</span><span>Traditional vs Deep Learning: Benchmarking Aligners and SNP Callers for Low-Coverage Sequencing in Pea.</span></li>
-          <li><span class="bullet bullet--mono">·</span><span>Leveraging Feature Explanation for Model Selection: An XAI Framework.</span></li>
-          <li><span class="bullet bullet--mono">·</span><span>Genomap Integration Enhances Multi-Omics Visualization and Deep Analysis of Single-Cell Expression Data.</span></li>
-        </ul>
+    <section class="section research-thread">
+      <div class="section-heading reveal">
+        <div><div class="a-section-label">The connecting idea</div><h2>Learn structure. Render it. Interrogate it.</h2></div>
+        <p>The projects differ in data and scale, but they follow a common logic that keeps prediction and scientific interpretation connected.</p>
+      </div>
+      <div class="logic-grid">
+        <article class="logic-card reveal"><span>01</span><h3>Start with relationships</h3><p>Ask what the original representation removes: feature proximity, graph-wide context, continuous expression, or relationships across modalities.</p></article>
+        <article class="logic-card reveal"><span>02</span><h3>Make structure spatial</h3><p>Use learned cartography, semantic placement, or optimal transport so related variables form neighborhoods that vision models can exploit.</p></article>
+        <article class="logic-card reveal"><span>03</span><h3>Return evidence to biology</h3><p>Project attribution, attention, masking, and perturbation back to locations with named genes, nodes, pathways, and measurable programs.</p></article>
+      </div>
+    </section>
+
+    <section class="section selected-work">
+      <div class="section-heading section-heading--compact reveal">
+        <div><div class="a-section-label">Selected current work</div><h2>Research in progress and preprints.</h2></div>
+        <a class="section-link" href="publications.html">All publications →</a>
+      </div>
+      <div class="nature-grid reveal">
+        <div class="nature-item">
+          <div class="nature-head"><div class="nature-title">Vision-based Deep Learning Analysis of Unordered Biomedical Tabular Datasets via Optimal Spatial Cartography</div><div class="nature-venue">Dynomap</div></div>
+          <div class="nature-meta"><span>Biomedical tabular learning</span><span class="dot-sep"></span><a href="https://arxiv.org/abs/2603.22675" target="_blank" rel="noopener noreferrer" class="a-link-underline a-link-underline--soft">arXiv:2603.22675</a></div>
+        </div>
+        <div class="nature-item">
+          <div class="nature-head"><div class="nature-title">Transformation of Biological Networks into Images via Semantic Cartography for Visual Interpretation and Scalable Deep Analysis</div><div class="nature-venue">Graph2Image</div></div>
+          <div class="nature-meta"><span>Biological network analysis</span><span class="dot-sep"></span><a href="https://arxiv.org/abs/2512.07040" target="_blank" rel="noopener noreferrer" class="a-link-underline a-link-underline--soft">arXiv:2512.07040</a></div>
+        </div>
+        <div class="nature-item">
+          <div class="nature-head"><div class="nature-title">Toward a Universal Foundation Model for Graph-Structured Data</div><div class="nature-venue">Graph foundation model</div></div>
+          <div class="nature-meta"><span>Transferable topology representations</span><span class="dot-sep"></span><a href="https://arxiv.org/abs/2604.06391" target="_blank" rel="noopener noreferrer" class="a-link-underline a-link-underline--soft">arXiv:2604.06391</a></div>
+        </div>
+        <div class="nature-item">
+          <div class="nature-head"><div class="nature-title">A Vision Foundation Model for Single-Cell Biology via Spatial Gene Cartography</div><div class="nature-venue">scVision</div></div>
+          <div class="nature-meta"><span>Collaborative single-cell foundation model</span><span class="dot-sep"></span><a href="https://arxiv.org/abs/2607.14163" target="_blank" rel="noopener noreferrer" class="a-link-underline a-link-underline--soft">arXiv:2607.14163</a></div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <span>© 2026 Sakib Mostafa · Stanford School of Medicine</span>
-    <div class="footer-links">
-      <a href="mailto:sakib.mostafa@stanford.edu" class="a-link-underline">sakib.mostafa@stanford.edu</a>
-      <a href="https://scholar.google.com/citations?user=iDKl2-AAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="a-link-underline">Google Scholar</a>
-      <a href="https://www.linkedin.com/in/sakib-mostafa/" target="_blank" rel="noopener noreferrer" class="a-link-underline">LinkedIn</a>
-    </div>
+    <div class="footer-profile"><strong>Sakib Mostafa</strong><span>Postdoctoral Scholar · Stanford School of Medicine</span></div>
+    <div class="footer-links"><a href="mailto:sakib@stanford.edu">Email</a><a href="https://med.stanford.edu/profiles/sakib-mostafa" target="_blank" rel="noopener noreferrer">Stanford</a><a href="https://scholar.google.com/citations?user=iDKl2-AAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Scholar</a><a href="https://www.linkedin.com/in/sakib-mostafa/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://orcid.org/0000-0002-4777-7832" target="_blank" rel="noopener noreferrer">ORCID</a></div>
+    <span>© 2026</span>
   </footer>
-
 </div>
 </body>
 </html>
