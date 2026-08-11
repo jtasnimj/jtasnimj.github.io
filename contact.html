@@ -18,8 +18,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260811-2">
-  <script src="site.js?v=20260811-2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260811-3">
+  <script src="site.js?v=20260811-3" defer></script>
 </head>
 <body>
 <div class="a-root page">
@@ -92,11 +92,23 @@
         </div>
 
         <div>
-          <div class="a-section-label">Stanford cancer collaborators</div>
+          <div class="a-section-label">Current biomedical collaborators</div>
           <div class="collab-list">
+            <div class="collab-person">
+              <div class="collab-pname">Md Tauhidul Islam</div>
+              <div class="collab-prole">Assistant Professor, Radiation Oncology</div>
+            </div>
             <div class="collab-person">
               <div class="collab-pname">Lei Xing</div>
               <div class="collab-prole">Jacob Haimson &amp; Sarah S. Donaldson Professor of Medical Physics</div>
+            </div>
+            <div class="collab-person">
+              <div class="collab-pname">Yuming Jiang</div>
+              <div class="collab-prole">Professor · Dynomap collaborator</div>
+            </div>
+            <div class="collab-person">
+              <div class="collab-pname">James Zou</div>
+              <div class="collab-prole">Associate Professor of Biomedical Data Science</div>
             </div>
             <div class="collab-person">
               <div class="collab-pname">Maximilian Diehn</div>
@@ -111,12 +123,12 @@
               <div class="collab-prole">Professor of Neuroradiology and Molecular Imaging</div>
             </div>
             <div class="collab-person">
-              <div class="collab-pname">Erinn Rankin</div>
-              <div class="collab-prole">Associate Professor, Radiation Oncology &amp; Ob-Gyn</div>
+              <div class="collab-pname">Joseph Liao</div>
+              <div class="collab-prole">Professor of Urology</div>
             </div>
             <div class="collab-person">
-              <div class="collab-pname">Anusha Kalbasi</div>
-              <div class="collab-prole">Associate Professor, Radiation Oncology</div>
+              <div class="collab-pname">Yuwei Xue</div>
+              <div class="collab-prole">Knowledge-graph learning collaborator</div>
             </div>
           </div>
         </div>
@@ -125,53 +137,38 @@
       <div class="mt-56">
         <div class="a-section-label">Collaborator map · academic + industrial</div>
         <div class="mt-18">
-          <div class="collab-map">
-            <svg class="collab-svg">
-              <line x1="50%" y1="50%" x2="50%" y2="12%" stroke="#e6e4dc" stroke-width="1" stroke-dasharray="3 4"/>
-              <line x1="50%" y1="50%" x2="86%" y2="30%" stroke="#e6e4dc" stroke-width="1" stroke-dasharray="3 4"/>
-              <line x1="50%" y1="50%" x2="92%" y2="62%" stroke="#e6e4dc" stroke-width="1" stroke-dasharray="3 4"/>
-              <line x1="50%" y1="50%" x2="70%" y2="88%" stroke="#e6e4dc" stroke-width="1" stroke-dasharray="3 4"/>
-              <line x1="50%" y1="50%" x2="30%" y2="88%" stroke="#e6e4dc" stroke-width="1" stroke-dasharray="3 4"/>
-              <line x1="50%" y1="50%" x2="8%" y2="62%" stroke="#e6e4dc" stroke-width="1" stroke-dasharray="3 4"/>
-              <line x1="50%" y1="50%" x2="14%" y2="30%" stroke="#e6e4dc" stroke-width="1" stroke-dasharray="3 4"/>
-            </svg>
+          <div class="collab-explorer" data-collab-explorer>
+            <div class="collab-explorer-head">
+              <nav class="collab-breadcrumb" aria-label="Collaborator map location" data-collab-breadcrumb></nav>
+              <div class="collab-map-controls">
+                <span class="collab-instruction">Select a region or use the arrow keys</span>
+                <button class="collab-back" type="button" data-collab-back disabled aria-label="Go back one level">← Back</button>
+              </div>
+            </div>
 
-            <div class="collab-center">Sakib Mostafa</div>
+            <div class="collab-stage" data-collab-stage>
+              <div class="collab-lines" data-collab-lines aria-hidden="true"></div>
+              <div class="collab-hub" aria-hidden="true">
+                <span>Network</span>
+                <strong>Sakib Mostafa</strong>
+                <small data-collab-context>All collaborators</small>
+              </div>
+              <div class="collab-nodes" data-collab-nodes role="group" aria-label="Collaborator regions"></div>
 
-            <div class="collab-node" style="left:50%;top:12%">
-              <div class="collab-node-label">Stanford</div>
-              <div class="collab-node-city">Stanford, CA</div>
-              <div class="collab-node-people">Lei Xing · Maximilian Diehn · Ash A. Alizadeh · Tarik F. Massoud · +5</div>
+              <aside class="collab-detail" data-collab-detail aria-live="polite" hidden>
+                <button class="collab-detail-close" type="button" data-collab-detail-close aria-label="Close collaborator details">×</button>
+                <div class="collab-detail-kicker" data-collab-detail-kicker></div>
+                <h3 data-collab-detail-title></h3>
+                <p class="collab-detail-place" data-collab-detail-place></p>
+                <ul class="collab-detail-people" data-collab-detail-people></ul>
+                <p class="collab-detail-note" data-collab-detail-note></p>
+              </aside>
             </div>
-            <div class="collab-node" style="left:86%;top:30%">
-              <div class="collab-node-label">Saskatchewan</div>
-              <div class="collab-node-city">Saskatoon, Canada</div>
-              <div class="collab-node-people">Debajyoti Mondal · Ian Stavness · Julita Vassileva · Amin Elshorbagy · +5</div>
-            </div>
-            <div class="collab-node" style="left:92%;top:62%">
-              <div class="collab-node-label">NRC &amp; GIFS</div>
-              <div class="collab-node-city">Saskatoon, Canada</div>
-              <div class="collab-node-people">Sateesh Kagale · Pankaj Bhowmik · David Konkin · Sampath Perumal · +3</div>
-            </div>
-            <div class="collab-node" style="left:70%;top:88%">
-              <div class="collab-node-label">Calgary</div>
-              <div class="collab-node-city">Calgary, Canada</div>
-              <div class="collab-node-people">Marcus Samuel · Muhammad Jamshed</div>
-            </div>
-            <div class="collab-node" style="left:30%;top:88%">
-              <div class="collab-node-label">Manitoba</div>
-              <div class="collab-node-city">Winnipeg, Canada</div>
-              <div class="collab-node-people">Christopher Henry · Christopher Bidinosti · Michael Alexander Beck</div>
-            </div>
-            <div class="collab-node" style="left:8%;top:62%">
-              <div class="collab-node-label">Industry</div>
-              <div class="collab-node-city">Global</div>
-              <div class="collab-node-people">William Van Der Camp · Google · Marin Pecar · NRGene · Raju Soolanayakanahally · AAFC · Jarin Tasnim · Callian AT</div>
-            </div>
-            <div class="collab-node" style="left:14%;top:30%">
-              <div class="collab-node-label">International</div>
-              <div class="collab-node-city">Worldwide</div>
-              <div class="collab-node-people">Rajeev Varshney · Murdoch · Murukarthick Jayakodi · Texas A&amp;M · Sanu Arora · John Innes Centre · Laura Botigué · CRAG · +3</div>
+
+            <div class="collab-legend">
+              <span><i class="legend-dot legend-dot--branch"></i> Select to open a region</span>
+              <span><i class="legend-dot legend-dot--leaf"></i> Select to view collaborators</span>
+              <span data-collab-summary>3 regions · academic, government, and industry</span>
             </div>
           </div>
         </div>

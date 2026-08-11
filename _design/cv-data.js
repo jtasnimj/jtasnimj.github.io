@@ -13,7 +13,7 @@ window.CV = {
   highlights: [
     { label: "Manuscripts under review", value: "3", note: "Nature, Nat Biomed Eng, Nat Comp Sci" },
     { label: "Stanford Cancer Institute Innovation Award", value: "$75K", note: "December 2025" },
-    { label: "Peer-reviewed publications", value: "19", note: "+ 1 book chapter · 425+ citations" },
+    { label: "Peer-reviewed publications", value: "19", note: "+ 1 book chapter · 560+ citations" },
     { label: "Patents filed (Stanford OTL)", value: "2", note: "Graph foundation models · Tabular-to-image" },
     { label: "Research grants secured", value: "$95K", note: "Plus CAD 168.5K in scholarships" },
     { label: "Years teaching & mentoring", value: "6", note: "7 TAships · 7 trainees supervised" },
@@ -192,6 +192,7 @@ window.CV = {
       { name: "Tracy Xue", level: "Asst. Clinical Research Coordinator", where: "Stanford School of Medicine", advisor: "Md. Tauhidul Islam" },
       { name: "Ariana Rahman", level: "Undergraduate", where: "Stanford School of Medicine", advisor: "Md. Tauhidul Islam" },
       { name: "Arman Heydari", level: "Master's Student", where: "University of Saskatchewan", advisor: "Debajyoti Mondal" },
+      { name: "Alexander", level: "Research Mentee", where: "Current mentoring", advisor: "Research guidance and project development" },
       { name: "Mehdi Khalaj", level: "Undergraduate", where: "University of Saskatchewan", advisor: "Ian Stavness" },
       { name: "Shagufta Zahid", level: "Undergraduate", where: "Bangladesh University", advisor: "Sakib Mostafa" },
       { name: "Bipul Dutta", level: "Undergraduate", where: "Bangladesh University", advisor: "Sakib Mostafa" },
@@ -199,14 +200,15 @@ window.CV = {
   },
 
   stanfordCollaborators: [
+    { name: "Md Tauhidul Islam", role: "Assistant Professor, Radiation Oncology", note: "Postdoctoral faculty sponsor and senior collaborator." },
     { name: "Lei Xing", role: "Jacob Haimson & Sarah S. Donaldson Professor of Medical Physics", note: "Senior author on three Nature-family submissions." },
+    { name: "Yuming Jiang", role: "Professor", note: "Dynomap collaborator." },
+    { name: "James Zou", role: "Associate Professor of Biomedical Data Science", note: "Machine learning for biomedical applications." },
     { name: "Maximilian Diehn", role: "Jack, Lulu & Sam Willson Professor in Cancer Biology · Vice Chair, Radiation Oncology", note: "Thoracic oncology and ctDNA-based early detection." },
     { name: "Ash A. Alizadeh", role: "Moghadam Family Professor of Medicine, Oncology, and Hematology", note: "Pioneering work on ctDNA and cancer molecular profiling." },
     { name: "Tarik F. Massoud", role: "Professor of Neuroradiology and Molecular Imaging", note: "Molecular and translational imaging." },
-    { name: "Erinn Rankin", role: "Associate Professor, Radiation Oncology & Ob-Gyn", note: "Tumor microenvironment and metastasis." },
-    { name: "Anusha Kalbasi", role: "Associate Professor, Radiation Oncology", note: "Engineered cell therapies and sarcoma." },
-    { name: "James Zou", role: "Associate Professor of Biomedical Data Science", note: "Machine learning for biomedical applications." },
-    { name: "Mohammad Esfahani", role: "Assistant Professor, Radiation Oncology", note: "Cancer multi-omics analysis." },
+    { name: "Joseph Liao", role: "Professor of Urology", note: "Clinical knowledge-graph collaborator." },
+    { name: "Yuwei Xue", role: "Research collaborator", note: "Knowledge-graph learning." },
   ],
 
   collabClusters: [
@@ -259,7 +261,7 @@ window.CV = {
 
   service: {
     journals: "ACM Transactions on Computing for Healthcare (1) · IEEE TETCI (1) · IEEE Access (8) · Frontiers in Neuroscience: Brain Imaging Methods (2) · Frontiers in Plant Science (2) · Elsevier Neurocomputing (2) · BMC Plant Methods (1)",
-    conferences: "32nd Canadian Conference on Computational Geometry (1) · IEEE BIBM (2) · ICCABS (1)",
+    conferences: "MICCAI (2026) · 32nd Canadian Conference on Computational Geometry (1) · IEEE BIBM (2) · ICCABS (1)",
     organization: [
       "Research Fest Organizer, CS Graduate Council, USask, 2021",
       "Global Village Organizer, USask Student Union, 2021",

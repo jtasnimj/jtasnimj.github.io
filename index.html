@@ -17,8 +17,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260811-2">
-  <script src="site.js?v=20260811-2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260811-3">
+  <script src="site.js?v=20260811-3" defer></script>
 </head>
 <body>
 <div class="a-root page">
@@ -66,22 +66,12 @@
         </div>
       </div>
 
-      <div class="hero-map" aria-hidden="true">
-        <div class="map-halo map-halo--one"></div>
-        <div class="map-halo map-halo--two"></div>
-        <div class="map-plane">
-          <span class="map-cell c1"></span><span class="map-cell c2"></span><span class="map-cell c3"></span>
-          <span class="map-cell c4"></span><span class="map-cell c5"></span><span class="map-cell c6"></span>
-          <span class="map-cell c7"></span><span class="map-cell c8"></span><span class="map-cell c9"></span>
-          <span class="map-cell c10"></span><span class="map-cell c11"></span><span class="map-cell c12"></span>
+      <figure class="hero-cover reveal">
+        <div class="hero-cover-window">
+          <img src="assets/dynomap-cover.png" alt="Dynomap cover showing tabular features flowing into a connected spatial graph with three learned regions.">
         </div>
-        <span class="floating-feature f1">GATA3</span>
-        <span class="floating-feature f2">KRAS</span>
-        <span class="floating-feature f3">EGFR</span>
-        <span class="floating-feature f4">TP53</span>
-        <span class="floating-feature f5">CD8A</span>
-        <div class="map-caption"><span>unordered features</span><i></i><strong>learned map</strong></div>
-      </div>
+        <figcaption><span>Existing Dynomap cover</span><strong>features → connected spatial structure</strong></figcaption>
+      </figure>
 
       <div class="stats stats--hero reveal" aria-label="Research at a glance">
         <div class="stat">
@@ -118,10 +108,8 @@
 
       <div class="project-grid">
         <article class="project-card project-card--dynomap reveal">
-          <div class="project-visual visual-dynomap" aria-hidden="true">
-            <div class="mini-table"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="flow-line"></div>
-            <div class="mini-map"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="project-visual project-cover-frame project-cover-frame--dynomap">
+            <img src="assets/dynomap-cover.png" alt="Dynomap project cover.">
           </div>
           <div class="project-kicker">Lead work · Biomedical tabular AI</div>
           <h3>Dynomap</h3>
@@ -134,11 +122,8 @@
         </article>
 
         <article class="project-card project-card--graph reveal">
-          <div class="project-visual visual-graph" aria-hidden="true">
-            <span class="graph-node n1"></span><span class="graph-node n2"></span><span class="graph-node n3"></span>
-            <span class="graph-node n4"></span><span class="graph-node n5"></span><span class="graph-node n6"></span>
-            <span class="graph-edge e1"></span><span class="graph-edge e2"></span><span class="graph-edge e3"></span><span class="graph-edge e4"></span>
-            <div class="graph-image-stack"><i></i><i></i><i></i></div>
+          <div class="project-visual project-cover-frame project-cover-frame--graph">
+            <img src="assets/graph2image-cover.png" alt="Graph2Image project cover showing a biological graph mapped into feature and structure image channels.">
           </div>
           <div class="project-kicker">Lead work · Biological networks</div>
           <h3>Graph2Image</h3>
@@ -151,9 +136,8 @@
         </article>
 
         <article class="project-card project-card--scvision reveal">
-          <div class="project-visual visual-cell" aria-hidden="true">
-            <div class="cell-cloud"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="cell-mask"><i></i><i></i><i></i><i></i></div>
+          <div class="project-visual project-cover-frame project-cover-frame--scvision">
+            <img src="assets/scvision-cover.png" alt="scVision project cover.">
           </div>
           <div class="project-kicker">Collaborative work · Single-cell biology</div>
           <h3>scVision</h3>
