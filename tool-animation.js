@@ -23,6 +23,11 @@
       headline: 'Large biological networks become inspectable images.',
       phase: 'Topology is encoded · image channels form · node evidence remains visible'
     },
+    foundation: {
+      color: '#17304b', kicker: 'Graph Foundation Model',
+      headline: 'One structural language transfers across unseen graphs.',
+      phase: 'Node roles are described · text and graph streams align · zero-shot transfer follows'
+    },
     cell: {
       color: '#b98636', kicker: 'scVision',
       headline: 'Single cells become reusable visual representations.',
@@ -159,6 +164,89 @@
     }
   };
 
+  const drawFoundation = (progress, w, h) => {
+    const navy='#17304b',teal='#337f82',gold='#b98636',red='#9b4d3f',paper='#fffdf9';
+    label('9 source graphs',w*.055,h*.13);
+    label('Shared topology',w*.5,h*.13,'center');
+    label('Unseen protein network',w*.69,h*.13);
+
+    const sourceCenters=[
+      {x:w*.13,y:h*.25,color:teal},
+      {x:w*.13,y:h*.43,color:gold},
+      {x:w*.13,y:h*.61,color:red}
+    ];
+    sourceCenters.forEach((source,sourceIndex) => {
+      const boxW=Math.max(68,w*.15),boxH=Math.max(42,h*.13);
+      ctx.fillStyle='rgba(255,253,249,.78)';
+      ctx.strokeStyle=rgba(navy,.14);ctx.lineWidth=1;
+      ctx.beginPath();ctx.roundRect(source.x-boxW/2,source.y-boxH/2,boxW,boxH,7);ctx.fill();ctx.stroke();
+      const nodes=[];
+      for(let i=0;i<7;i+=1) {
+        const angle=i*2.399+sourceIndex*.7,rr=8+(i%3)*5;
+        nodes.push({x:source.x+Math.cos(angle)*rr*1.6,y:source.y+Math.sin(angle)*rr*.72});
+      }
+      nodes.forEach((node,i) => {
+        line(node.x,node.y,nodes[(i*3+2)%nodes.length].x,nodes[(i*3+2)%nodes.length].y,rgba(navy,.24));
+      });
+      nodes.forEach((node,i)=>circle(node.x,node.y,i%3===0?3.2:2.1,rgba(source.color,.86),paper,.8));
+    });
+
+    const core={x:w*.49,y:h*.42},coreW=Math.max(94,w*.18),coreH=Math.max(70,h*.23);
+    sourceCenters.forEach((source,i) => {
+      const a={x:source.x+w*.08,y:source.y},b={x:w*.31,y:source.y};
+      const c={x:w*.37,y:core.y+(i-1)*12},d={x:core.x-coreW/2,y:core.y+(i-1)*12};
+      ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.bezierCurveTo(b.x,b.y,c.x,c.y,d.x,d.y);
+      ctx.strokeStyle=rgba(source.color,.24);ctx.lineWidth=1;ctx.stroke();
+      const point=bezierPoint((progress+i*.24)%1,a,b,c,d);
+      circle(point.x,point.y,2.8,source.color,paper,.8);
+    });
+
+    ctx.fillStyle=navy;ctx.strokeStyle=rgba(navy,.34);ctx.lineWidth=1;
+    ctx.beginPath();ctx.roundRect(core.x-coreW/2,core.y-coreH/2,coreW,coreH,12);ctx.fill();ctx.stroke();
+    ctx.fillStyle=paper;ctx.textAlign='center';ctx.font='600 10px "DM Sans", sans-serif';ctx.fillText('GFM',core.x,core.y-4);
+    ctx.fillStyle='rgba(255,253,249,.65)';ctx.font='600 7px "DM Sans", sans-serif';ctx.fillText('STRUCTURAL ROLES',core.x,core.y+11);
+    const orbitNodes=[[-27,-22],[-10,-30],[14,-25],[29,-10],[25,17],[4,27],[-21,20],[-31,0]];
+    orbitNodes.forEach((node,i)=>{
+      const next=orbitNodes[(i+1)%orbitNodes.length];
+      line(core.x+node[0],core.y+node[1],core.x+next[0],core.y+next[1],'rgba(255,255,255,.18)');
+      circle(core.x+node[0],core.y+node[1],1.7,[teal,gold,red][i%3]);
+    });
+
+    const targetCenter={x:w*.82,y:h*.42};
+    const transferA={x:core.x+coreW/2,y:core.y},transferB={x:w*.64,y:h*.27};
+    const transferC={x:w*.68,y:h*.62},transferD={x:targetCenter.x-w*.1,y:targetCenter.y};
+    ctx.beginPath();ctx.moveTo(transferA.x,transferA.y);ctx.bezierCurveTo(transferB.x,transferB.y,transferC.x,transferC.y,transferD.x,transferD.y);
+    ctx.strokeStyle=rgba(navy,.25);ctx.lineWidth=1.5;ctx.stroke();
+    for(let i=0;i<3;i+=1) {
+      const point=bezierPoint((progress+i/3)%1,transferA,transferB,transferC,transferD);
+      circle(point.x,point.y,3,[teal,gold,red][i],paper,.8);
+    }
+
+    const communities=[
+      {x:targetCenter.x-w*.035,y:targetCenter.y-h*.11,color:teal},
+      {x:targetCenter.x+w*.055,y:targetCenter.y,color:red},
+      {x:targetCenter.x-w*.025,y:targetCenter.y+h*.13,color:gold}
+    ];
+    const targetNodes=[];
+    communities.forEach((community,group) => {
+      for(let i=0;i<7;i+=1) {
+        const angle=i*2.399+group*.6,rr=8+(i%4)*4;
+        targetNodes.push({x:community.x+Math.cos(angle)*rr*1.3,y:community.y+Math.sin(angle)*rr*.7,color:community.color,group});
+      }
+    });
+    targetNodes.forEach((node,i) => {
+      const sameGroup=targetNodes.filter((candidate)=>candidate.group===node.group);
+      const neighbor=sameGroup[(i*3+1)%sameGroup.length];
+      line(node.x,node.y,neighbor.x,neighbor.y,rgba(node.color,.3));
+      if(i%7===0) {
+        const bridge=targetNodes[(i+9)%targetNodes.length];
+        line(node.x,node.y,bridge.x,bridge.y,rgba(navy,.28));
+      }
+    });
+    targetNodes.forEach((node,i)=>circle(node.x,node.y,i%7===0?4:2.2,rgba(node.color,.9),paper,.8));
+    label('Zero-shot transfer',targetCenter.x,h*.7,'center');
+  };
+
   const drawScVision = (progress, w, h) => {
     const gold='#b98636',teal='#337f82',red='#9b4d3f',navy='#17304b';
     label('Single-cell expression',w*.065,h*.13);
@@ -200,6 +288,7 @@
     background(w,h);
     if(active==='dynomap') drawDynomap(progress,w,h);
     else if(active==='graph') drawGraph2Image(progress,w,h);
+    else if(active==='foundation') drawFoundation(progress,w,h);
     else drawScVision(progress,w,h);
     window.requestAnimationFrame(draw);
   };

@@ -17,10 +17,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260811-3">
-  <link rel="stylesheet" href="tool-animation.css?v=20260811-1">
+  <link rel="stylesheet" href="styles.css?v=20260814-1">
+  <link rel="stylesheet" href="tool-animation.css?v=20260814-1">
   <script src="site.js?v=20260811-3" defer></script>
-  <script src="tool-animation.js?v=20260811-1" defer></script>
+  <script src="tool-animation.js?v=20260814-1" defer></script>
 </head>
 <body>
 <div class="a-root page">
@@ -72,6 +72,7 @@
         <div class="tool-tabs" role="tablist" aria-label="Research tools">
           <button class="tool-tab is-active" type="button" role="tab" aria-selected="true" data-tool="dynomap" style="--tool-color:#9b4d3f"><span>Tables → maps</span><strong>Dynomap</strong></button>
           <button class="tool-tab" type="button" role="tab" aria-selected="false" data-tool="graph" style="--tool-color:#337f82"><span>Graphs → images</span><strong>Graph2Image</strong></button>
+          <button class="tool-tab" type="button" role="tab" aria-selected="false" data-tool="foundation" style="--tool-color:#17304b"><span>Topology → transfer</span><strong>GFM</strong></button>
           <button class="tool-tab" type="button" role="tab" aria-selected="false" data-tool="cell" style="--tool-color:#b98636"><span>Cells → representations</span><strong>scVision</strong></button>
         </div>
         <div class="tool-stage">
@@ -85,9 +86,9 @@
 
       <div class="stats stats--hero reveal" aria-label="Research at a glance">
         <div class="stat">
-          <div class="stat-value" data-count="3">3</div>
+          <div class="stat-value" data-count="4">4</div>
           <div class="stat-label">Open research platforms</div>
-          <div class="stat-note">Dynomap · Graph2Image · scVision</div>
+          <div class="stat-note">Dynomap · Graph2Image · GFM · scVision</div>
         </div>
         <div class="stat">
           <div class="stat-value" data-count="4">4</div>
@@ -113,11 +114,12 @@
           <div class="a-section-label">Open research</div>
           <h2>From difficult data to inspectable maps.</h2>
         </div>
-        <p>Three connected projects explore the same central idea at different biological scales: representation is not a formatting detail—it can be the mechanism that makes learning and interpretation possible.</p>
+        <p>Four connected projects explore the same central idea at different biological scales: representation is not a formatting detail—it can be the mechanism that makes learning and interpretation possible.</p>
       </div>
 
       <div class="project-grid">
         <article class="project-card project-card--dynomap reveal">
+          <a class="project-card-hit" href="https://islamlab.org/dynomap/" target="_blank" rel="noopener noreferrer" aria-label="Open the Dynomap project"></a>
           <div class="project-visual project-cover-frame project-cover-frame--dynomap">
             <img src="assets/dynomap-cover.png" alt="Dynomap project cover.">
           </div>
@@ -132,6 +134,7 @@
         </article>
 
         <article class="project-card project-card--graph reveal">
+          <a class="project-card-hit" href="https://islamlab.org/graph2image/" target="_blank" rel="noopener noreferrer" aria-label="Open the Graph2Image project"></a>
           <div class="project-visual project-cover-frame project-cover-frame--graph">
             <img src="assets/graph2image-cover.png" alt="Graph2Image project cover showing a biological graph mapped into feature and structure image channels.">
           </div>
@@ -145,7 +148,23 @@
           </div>
         </article>
 
+        <article class="project-card project-card--foundation reveal">
+          <a class="project-card-hit" href="https://islamlab.org/graph-foundation-model/" target="_blank" rel="noopener noreferrer" aria-label="Open the Graph Foundation Model project"></a>
+          <div class="project-visual project-cover-frame project-cover-frame--foundation">
+            <img src="assets/gfm-cover.jpg" alt="Graph Foundation Model cover showing structural knowledge transferring from a graph to an unseen task.">
+          </div>
+          <div class="project-kicker">Lead work · Transferable graph AI</div>
+          <h3>Graph Foundation Model</h3>
+          <p>Learns a shared language of node structural roles on non-biological graphs, then transfers that topology knowledge into unseen biological networks.</p>
+          <div class="project-metric"><strong>95.5%</strong><span>SagePPI mean ROC–AUC, 21.8 points above the strongest supervised baseline</span></div>
+          <div class="project-links">
+            <a href="https://islamlab.org/graph-foundation-model/" target="_blank" rel="noopener noreferrer">Visit project <span aria-hidden="true">↗</span></a>
+            <a href="https://arxiv.org/abs/2604.06391" target="_blank" rel="noopener noreferrer">Preprint</a>
+          </div>
+        </article>
+
         <article class="project-card project-card--scvision reveal">
+          <a class="project-card-hit" href="https://islamlab.org/scvision/" target="_blank" rel="noopener noreferrer" aria-label="Open the scVision project"></a>
           <div class="project-visual project-cover-frame project-cover-frame--scvision">
             <img src="assets/scvision-cover.png" alt="scVision project cover.">
           </div>

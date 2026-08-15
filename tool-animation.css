@@ -21,11 +21,11 @@
   background-size: 28px 28px;
   mask-image: linear-gradient(to bottom, black, transparent 88%);
 }
-.tool-tabs { position: relative; z-index: 3; display: grid; grid-template-columns: repeat(3,1fr); border-bottom: 1px solid var(--line); background: rgba(247,243,237,.84); }
+.tool-tabs { position: relative; z-index: 3; display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--line); background: rgba(247,243,237,.84); }
 .tool-tab { position: relative; min-width: 0; min-height: 66px; padding: 13px 14px 11px; border: 0; border-right: 1px solid var(--line); background: transparent; color: var(--ink-mute); text-align: left; cursor: pointer; transition: background 180ms ease,color 180ms ease; }
 .tool-tab:last-child { border-right: 0; }
 .tool-tab span { display: block; overflow: hidden; font-size: 8px; font-weight: 600; letter-spacing: .09em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
-.tool-tab strong { display: block; margin-top: 4px; overflow: hidden; font-family: var(--display); font-size: clamp(16px,1.55vw,22px); font-weight: 400; line-height: 1.05; text-overflow: ellipsis; white-space: nowrap; }
+.tool-tab strong { display: block; margin-top: 4px; overflow: hidden; font-family: var(--display); font-size: clamp(15px,1.35vw,20px); font-weight: 400; line-height: 1.05; text-overflow: ellipsis; white-space: nowrap; }
 .tool-tab::after { content: ''; position: absolute; left: 0; right: 100%; bottom: -1px; height: 3px; background: var(--tool-color,var(--accent)); }
 .tool-tab:hover { color: var(--ink); }
 .tool-tab:focus-visible { z-index: 2; outline: 2px solid var(--ink); outline-offset: -3px; }
@@ -51,7 +51,7 @@
   .hero-tools { width:100%; }
   .tool-tab { min-height:58px; padding:10px 8px; }
   .tool-tab span { font-size:7px; }
-  .tool-tab strong { font-size:15px; }
+  .tool-tab strong { font-size:13px; }
   .tool-stage { aspect-ratio:.98; min-height:0; }
   .tool-copy { left:15px; right:15px; bottom:13px; align-items:start; flex-direction:column; gap:5px; }
   .tool-copy strong { max-width:300px; font-size:22px; }
